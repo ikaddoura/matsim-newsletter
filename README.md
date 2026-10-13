@@ -1,70 +1,58 @@
-# MATSim Weekly Newsletter
+# MATSim Weekly
 
-Schickt jeden Montag eine E-Mail mit den Entwicklungen der letzten 7 Tage auf
-[github.com/matsim-org](https://github.com/matsim-org):
+Statische Website mit Wochen- und Monatsüberblicken über die Entwicklungen auf
+[github.com/matsim-org](https://github.com/matsim-org), gehostet über GitHub Pages.
 
-- KI-Zusammenfassung auf Deutsch (TL;DR + thematische Abschnitte) via GitHub Copilot CLI
-- Kennzahlen, Releases, neue Repos, gemergte PRs (pro Repo), aktivste Repos, neue Issues, Contributors
-- Bot-/Dependabot-PRs werden herausgefiltert und nur gezählt
+- **Pro Kalenderwoche** (ISO-KW, Mo–So) eine Seite unter `docs/weeks/2026-W41.html`
+- **Pro Monat** ein Monatsrückblick unter `docs/months/2026-09.html`
+- **Startseite** mit neuester Woche und Archiv aller Wochen/Monate; alte Seiten bleiben erhalten
+- Inhalt: KI-Zusammenfassung auf Deutsch + Kennzahlen, Releases, neue Repos, gemergte PRs, aktivste Repos, neue Issues, Contributors.
+  Bot-/Dependabot-PRs werden nur gezählt.
+- Rohdaten pro Periode in `docs/data/` (daraus werden alle Seiten bei jedem Lauf neu gerendert)
 
-> Hinweis: `github.com/matsim` ist ein fremder User-Account. Das MATSim-Projekt liegt unter `matsim-org`.
+## Automatik
 
-## Betrieb auf GitHub Actions (empfohlen, kein eigener Server nötig)
+`.github/workflows/site.yml`:
 
-1. Diesen Ordner als (privates) Repository auf GitHub pushen.
-2. Unter **Settings → Secrets and variables → Actions** folgende Secrets anlegen:
+| Zeitpunkt | Aktion |
+|-----------|--------|
+| Montags 05:00 UTC | Seite für die abgeschlossene Vorwoche |
+| Am 1. des Monats 05:30 UTC | Monatsrückblick für den Vormonat |
 
-   | Secret      | Beispiel                     |
-   |-------------|------------------------------|
-   | `SMTP_HOST` | `smtp.gmail.com`             |
-   | `SMTP_PORT` | `465` (SSL) oder `587` (STARTTLS) |
-   | `SMTP_USER` | `dein.konto@gmail.com`       |
-   | `SMTP_PASS` | App-Passwort des Mailkontos  |
-   | `MAIL_FROM` | `MATSim Weekly <dein.konto@gmail.com>` |
-   | `MAIL_TO`   | `ich@example.com` (mehrere kommagetrennt) |
-   | `COPILOT_TOKEN` | Fine-grained PAT mit Berechtigung **„Copilot Requests“** ([anlegen](https://github.com/settings/personal-access-tokens/new)) |
+Danach werden die Seiten ins Repo committet und auf GitHub Pages deployed.
+Manuell: **Actions → MATSim Weekly Site → Run workflow** (`week`, `month` oder `rebuild`, optional mit IDs wie `2026-W40 2026-W41` oder `2026-09` zum Nachholen).
 
-   Bei Gmail: 2FA aktivieren und unter https://myaccount.google.com/apppasswords ein App-Passwort erzeugen.
-3. **Actions → MATSim Weekly Newsletter → Run workflow** für einen ersten Test
-   (Häkchen `dry_run` = nur Vorschau als Artefakt, kein Versand).
+## KI-Zusammenfassung / Tokens
 
-Der Workflow (`.github/workflows/newsletter.yml`) läuft montags um 06:00 UTC.
-Die KI-Zusammenfassung läuft über die Copilot CLI (verbraucht Premium-Requests deines Copilot-Abos).
-Optional kann per Repository-Variable `LLM_MODEL` ein Modell gewählt werden.
-Schlägt die Zusammenfassung fehl, kommt die Mail trotzdem (nur ohne KI-Teil).
-Die Copilot CLI läuft ohne Shell-/Schreibrechte in einem leeren Verzeichnis, da PR-Texte von Dritten stammen.
+- Die Zusammenfassung läuft über die **GitHub Copilot CLI** und verbraucht Premium-Requests deines Copilot-Abos (~5–6 pro Monat).
+- Dafür einmalig ein Fine-grained PAT mit Berechtigung **„Copilot Requests“** anlegen
+  ([hier](https://github.com/settings/personal-access-tokens/new)) und als Repository-Secret `COPILOT_TOKEN` speichern.
+- Optional per Repository-Variable `LLM_MODEL` ein Modell wählen.
+- Das automatische `GITHUB_TOKEN` wird nur zum Lesen der GitHub-Daten und zum Committen genutzt.
+- Ohne `COPILOT_TOKEN` (oder bei Fehlern) entstehen die Seiten trotzdem, nur ohne KI-Teil.
+- Die Copilot CLI läuft ohne Shell-/Schreibrechte in einem leeren Verzeichnis, da PR-Texte von Dritten stammen.
 
-> GitHub deaktiviert Cron-Workflows in Repos ohne Aktivität nach 60 Tagen; man erhält vorher eine Mail und kann sie mit einem Klick reaktivieren.
-
-## Betrieb auf eigenem Server (Alternative)
-
-Node.js ≥ 20 installieren, dann:
+## Lokal ausführen
 
 ```bash
-npm ci
-npm install -g @github/copilot
-# Crontab (crontab -e): montags 08:00
-0 8 * * 1  cd /opt/matsim-newsletter && GH_TOKEN=ghp_xxx COPILOT_GITHUB_TOKEN=github_pat_xxx SMTP_HOST=... SMTP_PORT=587 SMTP_USER=... SMTP_PASS=... MAIL_TO=... node src/newsletter.mjs >> newsletter.log 2>&1
+npm install -g @github/copilot   # einmalig, danach `copilot` zum Anmelden
+node src/site.mjs week            # letzte abgeschlossene Woche
+node src/site.mjs week 2026-W38   # bestimmte Woche(n)
+node src/site.mjs month 2026-09   # bestimmter Monat
+node src/site.mjs rebuild         # nur neu rendern (z.B. nach Layout-Änderungen)
 ```
 
-`GH_TOKEN`: beliebiges Token mit Lesezugriff auf öffentliche Repos (für höhere API-Limits).
+## Konfiguration (Umgebungsvariablen)
 
-## Konfiguration
+| Variable        | Default        | Bedeutung |
+|-----------------|----------------|-----------|
+| `GITHUB_ORG`    | `matsim-org`   | Beobachtete Organisation |
+| `GH_TOKEN` / `GITHUB_TOKEN` | –  | Für höhere GitHub-API-Limits |
+| `LLM_PROVIDER`  | `copilot`      | `copilot`, `openai` (OpenAI-kompatible API) oder `none` |
+| `LLM_MODEL`     | CLI-Default    | Modell |
+| `LLM_API_URL` / `LLM_API_KEY` | – | Für `openai`, z.B. `https://api.openai.com/v1/chat/completions` |
+| `COPILOT_BIN`   | `copilot`      | Pfad zur Copilot CLI |
+| `DISABLE_LLM`   | `false`        | KI-Zusammenfassung abschalten |
+| `OUT_DIR`       | `docs`         | Ausgabeverzeichnis |
 
-| Variable        | Default               | Bedeutung |
-|-----------------|-----------------------|-----------|
-| `GITHUB_ORG`    | `matsim-org`          | Beobachtete Organisation |
-| `DAYS`          | `7`                   | Zeitraum in Tagen |
-| `LLM_PROVIDER`  | `copilot`             | `copilot`, `openai` (OpenAI-kompatible API) oder `none` |
-| `LLM_MODEL`     | CLI-Default           | Modell |
-| `LLM_API_URL` / `LLM_API_KEY` | –       | Für `openai`, z.B. `https://api.openai.com/v1/chat/completions` |
-| `COPILOT_BIN`   | `copilot`             | Pfad zur Copilot CLI |
-| `DISABLE_LLM`   | `false`               | KI-Zusammenfassung abschalten |
-| `SMTP_SECURE`   | `true` bei Port 465   | TLS erzwingen |
-
-## Lokale Vorschau
-
-```bash
-npm ci
-GH_TOKEN=... npm run preview   # schreibt newsletter-preview.html, verschickt nichts
-```
+> Hinweis: `github.com/matsim` ist ein fremder User-Account; MATSim liegt unter `matsim-org`.

@@ -1,0 +1,130 @@
+{
+ "kind": "week",
+ "id": "2026-W40",
+ "org": "matsim-org",
+ "start": "2026-09-28T00:00:00.000Z",
+ "end": "2026-10-05T00:00:00.000Z",
+ "generatedAt": "2026-10-13T14:08:23.394Z",
+ "summaryBy": "copilot",
+ "summary": "<h3>Das Wichtigste in Kürze</h3>\n<ul>\n<li>Ruhige Woche (28.09.–04.10.2026): keine neuen Releases und keine neuen Repositories.</li>\n<li>In <code>matsim-libs</code> wurde ein PR gemergt, der die Beschriftung von Stichproben-Prozentwerten vereinheitlicht.</li>\n<li>Zwei neue Issues zum DSim: fehlendes Scoring von Agenten ohne Legs und ein Laufzeitproblem bei Shaded-Jars.</li>\n<li>Außerdem gab es drei Bot-PRs und Commits in <code>website-11ty</code> und <code>pt2matsim</code>.</li>\n</ul>\n\n<h3>Bugfixes und Verbesserungen</h3>\n<ul>\n<li><a href=\"https://github.com/matsim-org/matsim-libs/pull/5193\">PR #5193 – fix: Standardize sample percentage labels</a> (rewertvsp): Neu ist <code>PopulationUtils.getSampleLabel</code>. Die Methode formatiert Bruchteile als Prozent-Labels mit bis zu vier Nachkommastellen und ohne überflüssige Nullen. Die Labels werden einheitlich verwendet für heruntergesampelte Populationen, die <code>SampleOptions</code>-CLI-Optionen und Dateinamen sowie für Ausgaben des Kleinskaligen Wirtschaftsverkehrs. Zusätzlich wird ein Fehler aus #5185 in <code>DownSamplePopulation</code> behoben. Für Nutzer bedeutet das konsistentere Sample-Bezeichnungen in Dateinamen und Optionen. Der Beschreibungstext nennt außerdem eine korrigierte Standard-Umrechnung von Prozent in Bruchteile; die Details sind in den Daten abgeschnitten.</li>\n</ul>\n\n<h3>Neue Issues (DSim)</h3>\n<ul>\n<li><a href=\"https://github.com/matsim-org/matsim-libs/issues/5199\">#5199</a>: Laut Meldung von d-roeder scort DSim Agenten nicht, deren gewählter Plan keine Legs enthält (<code>BackpackScoring</code>). Dadurch weichen die Scores von denen eines qsim-Laufs ab, und <code>scorestats</code> kann verfälscht sein.</li>\n<li><a href=\"https://github.com/matsim-org/matsim-libs/issues/5198\">#5198</a>: DSim braucht zur Laufzeit bei Shaded-Jars <code>--add-exports java.base/jdk.internal.misc</code>. Das trat beim Ausführen des matsim-berlin-scenario mit DSim auf. Der Melder hält den Workaround nicht für eine endgültige Lösung.</li>\n</ul>\n\n<h3>Infrastruktur und Sonstiges</h3>\n<ul>\n<li>Drei Bot-PRs, vermutlich Dependency-Updates (die Daten nennen keine Details), wurden gemergt.</li>\n<li>Aktivität gab es zudem in <code>website-11ty</code> (2 Commits) und <code>pt2matsim</code> (1 Commit, Bot). Inhalte sind in den Daten nicht angegeben. Insgesamt waren 2 Contributor beteiligt.</li>\n</ul>",
+ "data": {
+  "newRepos": [],
+  "releases": [],
+  "mergedPRs": [
+   {
+    "repo": "matsim-libs",
+    "number": 5200,
+    "title": "build(deps): bump the bag-of-cats group across 1 directory with 24 updates",
+    "url": "https://github.com/matsim-org/matsim-libs/pull/5200",
+    "author": "dependabot[bot]",
+    "bot": true,
+    "labels": [
+     "dependencies",
+     "java"
+    ]
+   },
+   {
+    "repo": "matsim-libs",
+    "number": 5193,
+    "title": "fix: Standardize sample percentage labels",
+    "url": "https://github.com/matsim-org/matsim-libs/pull/5193",
+    "author": "rewertvsp",
+    "bot": false,
+    "labels": []
+   },
+   {
+    "repo": "pt2matsim",
+    "number": 445,
+    "title": "Bump com.fasterxml.jackson:jackson-bom from 2.22.2 to 2.22.3",
+    "url": "https://github.com/matsim-org/pt2matsim/pull/445",
+    "author": "dependabot[bot]",
+    "bot": true,
+    "labels": [
+     "dependencies",
+     "java"
+    ]
+   },
+   {
+    "repo": "matsim-libs",
+    "number": 5183,
+    "title": "build(deps): bump github/codeql-action from 4.38.0 to 4.38.2 in the github-actions group across 1 directory",
+    "url": "https://github.com/matsim-org/matsim-libs/pull/5183",
+    "author": "dependabot[bot]",
+    "bot": true,
+    "labels": [
+     "dependencies",
+     "github_actions"
+    ]
+   }
+  ],
+  "openedPRs": [
+   {
+    "repo": "alonso-mora",
+    "number": 101,
+    "title": "chore(deps-dev): bump org.mockito:mockito-junit-jupiter from 5.23.0 to 5.24.0",
+    "url": "https://github.com/matsim-org/alonso-mora/pull/101",
+    "author": "dependabot[bot]",
+    "bot": true,
+    "labels": [
+     "dependencies",
+     "java"
+    ]
+   }
+  ],
+  "openedIssues": [
+   {
+    "repo": "matsim-libs",
+    "number": 5199,
+    "title": "DSim never scores agents whose selected plan has no legs, corrupting `scorestats`",
+    "url": "https://github.com/matsim-org/matsim-libs/issues/5199",
+    "author": "d-roeder",
+    "bot": false,
+    "labels": []
+   },
+   {
+    "repo": "matsim-libs",
+    "number": 5198,
+    "title": "DSim requires `--add-exports java.base/jdk.internal.misc` at runtime for shaded jars",
+    "url": "https://github.com/matsim-org/matsim-libs/issues/5198",
+    "author": "d-roeder",
+    "bot": false,
+    "labels": []
+   }
+  ],
+  "closedIssuesCount": 0,
+  "activeRepos": [
+   {
+    "repo": "website-11ty",
+    "url": "https://github.com/matsim-org/website-11ty",
+    "description": "MATSim Website, redesign of 2024, based on 11ty",
+    "commits": 2,
+    "humanCommits": 2,
+    "authors": [
+     "langkoos"
+    ]
+   },
+   {
+    "repo": "matsim-libs",
+    "url": "https://github.com/matsim-org/matsim-libs",
+    "description": "Multi-Agent Transport Simulation",
+    "commits": 3,
+    "humanCommits": 1,
+    "authors": [
+     "rewertvsp"
+    ]
+   },
+   {
+    "repo": "pt2matsim",
+    "url": "https://github.com/matsim-org/pt2matsim",
+    "description": "Package to create a multi-modal MATSim network and schedule from public transit data (GTFS or HAFAS) and an OSM map of the area.",
+    "commits": 1,
+    "humanCommits": 0,
+    "authors": []
+   }
+  ],
+  "contributors": [
+   "langkoos",
+   "rewertvsp"
+  ]
+ }
+}

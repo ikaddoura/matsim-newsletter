@@ -1,0 +1,184 @@
+{
+ "kind": "week",
+ "id": "2026-W37",
+ "org": "matsim-org",
+ "start": "2026-09-07T00:00:00.000Z",
+ "end": "2026-09-14T00:00:00.000Z",
+ "generatedAt": "2026-10-13T14:07:13.978Z",
+ "summaryBy": "copilot",
+ "summary": "<h3>Das Wichtigste in Kürze</h3>\n<ul>\n<li>Ruhige Woche: Es gab keine neuen Releases und keine neuen Repositories.</li>\n<li>Die <code>IOUtils</code> in matsim-libs unterstützen jetzt ZIP als Kompressionsformat.</li>\n<li>Die verteilte Simulation (DSim) soll ohne zusätzliche Abhängigkeiten als Ersatz für die <code>mobsim</code> nutzbar sein.</li>\n<li>matsim-episim-libs wurde auf MATSim 2026 und Java 25 migriert und war mit 35 Commits das aktivste Repository.</li>\n</ul>\n\n<h3>Core und Simulation (matsim-libs)</h3>\n<ul>\n<li><strong>ZIP in IOUtils:</strong> ZIP kommt als fünftes Einzeldatei-Format neben gzip, lz4, bz2 und zst hinzu. Eine Datei entspricht einem <code>ZipEntry</code> mit dem Basisnamen, z.B. wird aus <code>output_plans.xml.zip</code> der Eintrag <code>output_plans.xml</code>. Es ist keine neue Abhängigkeit nötig, da <code>java.util.zip</code> genutzt wird. <a href=\"https://github.com/matsim-org/matsim-libs/pull/5163\">PR #5163</a></li>\n<li><strong>DSim:</strong> Die Abhängigkeit <code>fory</code> und der gesamte Serialisierungscode wandern in den Contrib \"distributed simulation\". Den Contrib braucht man nur, wenn man auf mehreren Rechenknoten simuliert. <a href=\"https://github.com/matsim-org/matsim-libs/pull/5167\">PR #5167</a></li>\n<li><strong>Refactoring:</strong> Für <code>decideOnCoordForActivity</code> gibt es eine Überladung ohne <code>Scenario</code>. <a href=\"https://github.com/matsim-org/matsim-libs/pull/5169\">PR #5169</a></li>\n<li><strong>Neu offen:</strong> Netzwerk-Tools für Infrastrukturklassifizierung und Höhendaten im Bicycle-Contrib, mit OSM- und SUMO-Pfad. <a href=\"https://github.com/matsim-org/matsim-libs/pull/5168\">PR #5168</a></li>\n</ul>\n\n<h3>Episim</h3>\n<ul>\n<li><strong>Upgrade auf MATSim 2026 / Java 25:</strong> Dazu gehören aktualisierte Abhängigkeiten, die Anpassung an API-Änderungen, die Migration von Tests auf JUnit 5 und eine aktualisierte CI-Konfiguration. Zudem wird die Reflection auf <code>SplittableRandom</code> ersetzt, die durch die strengere Kapselung blockiert ist. <a href=\"https://github.com/matsim-org/matsim-episim-libs/pull/124\">PR #124</a></li>\n<li><strong>Batch-Output-Packing:</strong> Neue Tools verpacken einen fertigen Episim-Lauf für den covid-sim.info-Visualiser, der auf ein ZIP-basiertes Eingabeformat umgestellt wurde. Es kommen nur neue Klassen hinzu, bestehender Simulationscode bleibt unberührt. <a href=\"https://github.com/matsim-org/matsim-episim-libs/pull/125\">PR #125</a></li>\n</ul>\n\n<h3>Sonstiges</h3>\n<ul>\n<li>Neues Issue in vsp-internal: Der Python-SrV-Reader soll auch SrV 2018 und 2023 lesen können, die sich unterscheiden. <a href=\"https://github.com/matsim-org/vsp-internal/issues/10\">Issue #10</a></li>\n<li>In pt2matsim gab es 3 Commits, alle von Bots. Zusätzlich wurden 5 Bot-PRs gemergt, vermutlich Dependency-Updates.</li>\n</ul>",
+ "data": {
+  "newRepos": [],
+  "releases": [],
+  "mergedPRs": [
+   {
+    "repo": "matsim-libs",
+    "number": 5169,
+    "title": "refactor(core): add decideOnCoordForActivity overload without Scenario",
+    "url": "https://github.com/matsim-org/matsim-libs/pull/5169",
+    "author": "nkuehnel",
+    "bot": false,
+    "labels": []
+   },
+   {
+    "repo": "matsim-episim-libs",
+    "number": 125,
+    "title": "Js/Add batch output packing for the covid-sim.info visualiser",
+    "url": "https://github.com/matsim-org/matsim-episim-libs/pull/125",
+    "author": "jarosmirk",
+    "bot": false,
+    "labels": []
+   },
+   {
+    "repo": "matsim-libs",
+    "number": 5167,
+    "title": "refactor(dsim): decouple serialization and message type registry",
+    "url": "https://github.com/matsim-org/matsim-libs/pull/5167",
+    "author": "Janekdererste",
+    "bot": false,
+    "labels": []
+   },
+   {
+    "repo": "matsim-episim-libs",
+    "number": 124,
+    "title": "JS/ Upgrade Episim to MATSim 2026 / Java 25",
+    "url": "https://github.com/matsim-org/matsim-episim-libs/pull/124",
+    "author": "jarosmirk",
+    "bot": false,
+    "labels": []
+   },
+   {
+    "repo": "matsim-libs",
+    "number": 5166,
+    "title": "build(deps): bump the bag-of-cats group across 1 directory with 16 updates",
+    "url": "https://github.com/matsim-org/matsim-libs/pull/5166",
+    "author": "dependabot[bot]",
+    "bot": true,
+    "labels": [
+     "dependencies",
+     "java"
+    ]
+   },
+   {
+    "repo": "matsim-libs",
+    "number": 5164,
+    "title": "build(deps): bump advanced-security/maven-dependency-submission-action from 5.0.0 to 6.0.1 in the github-actions group",
+    "url": "https://github.com/matsim-org/matsim-libs/pull/5164",
+    "author": "dependabot[bot]",
+    "bot": true,
+    "labels": [
+     "dependencies",
+     "github_actions"
+    ]
+   },
+   {
+    "repo": "matsim-libs",
+    "number": 5163,
+    "title": "feat(core): support ZIP as a compression format in IOUtils",
+    "url": "https://github.com/matsim-org/matsim-libs/pull/5163",
+    "author": "mfrawley-moia",
+    "bot": false,
+    "labels": []
+   },
+   {
+    "repo": "pt2matsim",
+    "number": 442,
+    "title": "Bump org.apache.maven.plugins:maven-surefire-plugin from 3.5.6 to 3.6.0",
+    "url": "https://github.com/matsim-org/pt2matsim/pull/442",
+    "author": "dependabot[bot]",
+    "bot": true,
+    "labels": [
+     "dependencies",
+     "java"
+    ]
+   },
+   {
+    "repo": "pt2matsim",
+    "number": 441,
+    "title": "Bump org.apache.maven.plugins:maven-failsafe-plugin from 3.5.6 to 3.6.0",
+    "url": "https://github.com/matsim-org/pt2matsim/pull/441",
+    "author": "dependabot[bot]",
+    "bot": true,
+    "labels": [
+     "dependencies",
+     "java"
+    ]
+   },
+   {
+    "repo": "pt2matsim",
+    "number": 440,
+    "title": "Bump org.apache.maven.plugins:maven-compiler-plugin from 3.15.0 to 3.16.0",
+    "url": "https://github.com/matsim-org/pt2matsim/pull/440",
+    "author": "dependabot[bot]",
+    "bot": true,
+    "labels": [
+     "dependencies",
+     "java"
+    ]
+   }
+  ],
+  "openedPRs": [
+   {
+    "repo": "matsim-libs",
+    "number": 5168,
+    "title": "feat(bicycle): network tools for infra classification and elevation (OSM and SUMO paths)",
+    "url": "https://github.com/matsim-org/matsim-libs/pull/5168",
+    "author": "vizsim",
+    "bot": false,
+    "labels": []
+   }
+  ],
+  "openedIssues": [
+   {
+    "repo": "vsp-internal",
+    "number": 10,
+    "title": "modify python srv reader to be able to read srv18 and srv23 (which are different)",
+    "url": "https://github.com/matsim-org/vsp-internal/issues/10",
+    "author": "paulheinr",
+    "bot": false,
+    "labels": []
+   }
+  ],
+  "closedIssuesCount": 1,
+  "activeRepos": [
+   {
+    "repo": "matsim-episim-libs",
+    "url": "https://github.com/matsim-org/matsim-episim-libs",
+    "description": "Epidemic simulation for MATSim",
+    "commits": 35,
+    "humanCommits": 35,
+    "authors": [
+     "jarosmirk",
+     "jakobrehmann"
+    ]
+   },
+   {
+    "repo": "matsim-libs",
+    "url": "https://github.com/matsim-org/matsim-libs",
+    "description": "Multi-Agent Transport Simulation",
+    "commits": 5,
+    "humanCommits": 3,
+    "authors": [
+     "nkuehnel",
+     "Janekdererste",
+     "mfrawley-moia"
+    ]
+   },
+   {
+    "repo": "pt2matsim",
+    "url": "https://github.com/matsim-org/pt2matsim",
+    "description": "Package to create a multi-modal MATSim network and schedule from public transit data (GTFS or HAFAS) and an OSM map of the area.",
+    "commits": 3,
+    "humanCommits": 0,
+    "authors": []
+   }
+  ],
+  "contributors": [
+   "jakobrehmann",
+   "Janekdererste",
+   "jarosmirk",
+   "mfrawley-moia",
+   "nkuehnel"
+  ]
+ }
+}

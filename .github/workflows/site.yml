@@ -1,0 +1,82 @@
+name: MATSim Weekly Site
+
+on:
+  schedule:
+    - cron: '0 5 * * 1'   # Mondays: page for the previous ISO week
+    - cron: '30 5 1 * *'  # 1st of month: review of the previous month
+  workflow_dispatch:
+    inputs:
+      kind:
+        description: 'What to generate'
+        type: choice
+        options: [week, month, rebuild]
+        default: week
+      ids:
+        description: 'Optional period ids, space separated (e.g. "2026-W40 2026-W41" or "2026-09"); empty = last completed'
+        required: false
+  push:
+    branches: [main]
+    paths: ['docs/**']
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: site
+  cancel-in-progress: false
+
+jobs:
+  generate:
+    if: github.event_name != 'push'
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Install Copilot CLI
+        run: npm install -g @github/copilot
+      - name: Generate pages
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          COPILOT_GITHUB_TOKEN: ${{ secrets.COPILOT_TOKEN }}
+          LLM_MODEL: ${{ vars.LLM_MODEL }}
+          KIND: ${{ github.event.schedule == '30 5 1 * *' && 'month' || inputs.kind || 'week' }}
+          IDS: ${{ inputs.ids }}
+        run: node src/site.mjs "$KIND" $IDS
+      - name: Commit
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add docs
+          git diff --cached --quiet && exit 0
+          git commit -m "Update site (${{ github.event.schedule || inputs.kind }})"
+          git pull --rebase
+          git push
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: docs
+
+  # Redeploy when pages are changed manually (pushes by GITHUB_TOKEN don't trigger this).
+  build:
+    if: github.event_name == 'push'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: docs
+
+  deploy:
+    needs: [generate, build]
+    if: always() && (needs.generate.result == 'success' || needs.build.result == 'success')
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4

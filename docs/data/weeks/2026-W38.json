@@ -1,0 +1,193 @@
+{
+ "kind": "week",
+ "id": "2026-W38",
+ "org": "matsim-org",
+ "start": "2026-09-14T00:00:00.000Z",
+ "end": "2026-09-21T00:00:00.000Z",
+ "generatedAt": "2026-10-13T14:07:39.177Z",
+ "summaryBy": "copilot",
+ "summary": "<h3>Das Wichtigste in Kürze</h3>\n<ul>\n<li>Ruhige Woche: keine neuen Releases und keine neuen Repositories.</li>\n<li>In <code>matsim-episim-libs</code> wurde die Konfiguration pathogen-unabhängig gemacht (Influenza und RSV sind nun konfigurierbar).</li>\n<li>Im Decongestion-Pricing wurde ein Zeitversatz bei der Maut-Berechnung behoben.</li>\n<li>Der Full-Integration-Test in <code>matsim-libs</code> schlägt unter Windows wegen der Pseudosimulation fehl (neues Issue).</li>\n</ul>\n\n<h3>Neue Features</h3>\n<ul>\n<li><strong>EpiSim:</strong> <a href=\"https://github.com/matsim-org/matsim-episim-libs/pull/126\">PR #126</a> (jarosmirk) verlagert bisher fest einprogrammierte, SARS-CoV-2-spezifische Annahmen (Virusvarianten, Impftypen, Masken als Enums) in die Konfiguration und führt explizite Pathogen-Unterstützung ein. Für Nutzer heißt das: Influenza und RSV lassen sich konfigurieren, ohne die Kernmodelle zu ändern. Laut Beschreibung sollen bestehende COVID-Szenarien weiter nutzbar bleiben (der Text der Beschreibung ist in den Daten abgeschnitten).</li>\n</ul>\n\n<h3>Bugfixes</h3>\n<ul>\n<li><strong>Decongestion Pricing:</strong> <a href=\"https://github.com/matsim-org/matsim-libs/pull/5176\">PR #5176</a> (tthunig) lässt Agenten nun nach ihrer Link-Eintrittszeit zahlen, da auch die Staudaten, aus denen der Preis berechnet wird, nach Eintrittszeiten erfasst werden. Zuvor waren die Staupreise zeitlich verschoben. Ergebnisse mit diesem Modul können sich dadurch ändern.</li>\n</ul>\n\n<h3>Dokumentation</h3>\n<ul>\n<li><a href=\"https://github.com/matsim-org/matsim-libs/pull/5178\">PR #5178</a> (kainagel) ergänzt Kommentare und Warnungen bei fehlerhaften Summationsmethoden im Lärm-Modul. Wer diese Methoden nutzt, sollte die Hinweise beachten.</li>\n</ul>\n\n<h3>Infrastruktur/Build</h3>\n<ul>\n<li>Issue <a href=\"https://github.com/matsim-org/matsim-libs/issues/5172\">#5172</a> (Janekdererste): Der Full-Integration-Test schlägt seit einiger Zeit auf der Windows-Maschine konsistent in der Test-Suite der Pseudosimulation fehl.</li>\n<li>Sechs Bot-PRs (Dependency-Updates) wurden ebenfalls gemergt.</li>\n</ul>\n\n<h3>Aktivität</h3>\n<ul>\n<li>Insgesamt waren 6 Contributors aktiv. Am meisten passierte in <code>matsim-episim-libs</code> (20 Commits, 1 Autor). Daneben gab es Aktivität in <code>website-11ty</code> (4 Commits), <code>matsim-libs</code> (7 Commits, davon 2 menschliche) und <code>pt2matsim</code> (2 Commits).</li>\n</ul>",
+ "data": {
+  "newRepos": [],
+  "releases": [],
+  "mergedPRs": [
+   {
+    "repo": "matsim-libs",
+    "number": 5179,
+    "title": "build(deps): bump org.apache.fory:fory-core from 1.7.2 to 1.7.3",
+    "url": "https://github.com/matsim-org/matsim-libs/pull/5179",
+    "author": "dependabot[bot]",
+    "bot": true,
+    "labels": [
+     "dependencies",
+     "java"
+    ]
+   },
+   {
+    "repo": "matsim-libs",
+    "number": 5178,
+    "title": "docs: add comments and warnings to faulty noise summation methods",
+    "url": "https://github.com/matsim-org/matsim-libs/pull/5178",
+    "author": "kainagel",
+    "bot": false,
+    "labels": []
+   },
+   {
+    "repo": "matsim-libs",
+    "number": 5177,
+    "title": "build(deps): bump the bag-of-cats group across 1 directory with 4 updates",
+    "url": "https://github.com/matsim-org/matsim-libs/pull/5177",
+    "author": "dependabot[bot]",
+    "bot": true,
+    "labels": [
+     "dependencies",
+     "java"
+    ]
+   },
+   {
+    "repo": "matsim-episim-libs",
+    "number": 126,
+    "title": "Pathogen-agnostic configuration: pathogens, transmission routes, antibodies and infection episodes",
+    "url": "https://github.com/matsim-org/matsim-episim-libs/pull/126",
+    "author": "jarosmirk",
+    "bot": false,
+    "labels": []
+   },
+   {
+    "repo": "matsim-libs",
+    "number": 5176,
+    "title": "fix(decongestion pricing): Correct toll calculation ",
+    "url": "https://github.com/matsim-org/matsim-libs/pull/5176",
+    "author": "tthunig",
+    "bot": false,
+    "labels": []
+   },
+   {
+    "repo": "matsim-libs",
+    "number": 5175,
+    "title": "build(deps): bump the bag-of-cats group across 1 directory with 3 updates",
+    "url": "https://github.com/matsim-org/matsim-libs/pull/5175",
+    "author": "dependabot[bot]",
+    "bot": true,
+    "labels": [
+     "dependencies",
+     "java"
+    ]
+   },
+   {
+    "repo": "matsim-libs",
+    "number": 5174,
+    "title": "build(deps): bump github/codeql-action from 4.37.9 to 4.38.0 in the github-actions group",
+    "url": "https://github.com/matsim-org/matsim-libs/pull/5174",
+    "author": "dependabot[bot]",
+    "bot": true,
+    "labels": [
+     "dependencies",
+     "github_actions"
+    ]
+   },
+   {
+    "repo": "matsim-libs",
+    "number": 5173,
+    "title": "build(deps): bump org.apache.fory:fory-core from 1.7.1 to 1.7.2",
+    "url": "https://github.com/matsim-org/matsim-libs/pull/5173",
+    "author": "dependabot[bot]",
+    "bot": true,
+    "labels": [
+     "dependencies",
+     "java"
+    ]
+   },
+   {
+    "repo": "pt2matsim",
+    "number": 443,
+    "title": "Bump org.checkerframework:checker-qual from 4.2.2 to 4.2.3",
+    "url": "https://github.com/matsim-org/pt2matsim/pull/443",
+    "author": "dependabot[bot]",
+    "bot": true,
+    "labels": [
+     "dependencies",
+     "java"
+    ]
+   }
+  ],
+  "openedPRs": [
+   {
+    "repo": "alonso-mora",
+    "number": 100,
+    "title": "chore(deps): bump actions/setup-java from 5 to 6 in the github-actions group",
+    "url": "https://github.com/matsim-org/alonso-mora/pull/100",
+    "author": "dependabot[bot]",
+    "bot": true,
+    "labels": [
+     "dependencies",
+     "github_actions"
+    ]
+   }
+  ],
+  "openedIssues": [
+   {
+    "repo": "matsim-libs",
+    "number": 5172,
+    "title": "Full Integration is failing due to pseudosimulation",
+    "url": "https://github.com/matsim-org/matsim-libs/issues/5172",
+    "author": "Janekdererste",
+    "bot": false,
+    "labels": []
+   }
+  ],
+  "closedIssuesCount": 0,
+  "activeRepos": [
+   {
+    "repo": "matsim-episim-libs",
+    "url": "https://github.com/matsim-org/matsim-episim-libs",
+    "description": "Epidemic simulation for MATSim",
+    "commits": 20,
+    "humanCommits": 20,
+    "authors": [
+     "jarosmirk"
+    ]
+   },
+   {
+    "repo": "website-11ty",
+    "url": "https://github.com/matsim-org/website-11ty",
+    "description": "MATSim Website, redesign of 2024, based on 11ty",
+    "commits": 4,
+    "humanCommits": 4,
+    "authors": [
+     "ikaddoura",
+     "langkoos"
+    ]
+   },
+   {
+    "repo": "matsim-libs",
+    "url": "https://github.com/matsim-org/matsim-libs",
+    "description": "Multi-Agent Transport Simulation",
+    "commits": 7,
+    "humanCommits": 2,
+    "authors": [
+     "kainagel",
+     "tthunig"
+    ]
+   },
+   {
+    "repo": "pt2matsim",
+    "url": "https://github.com/matsim-org/pt2matsim",
+    "description": "Package to create a multi-modal MATSim network and schedule from public transit data (GTFS or HAFAS) and an OSM map of the area.",
+    "commits": 2,
+    "humanCommits": 1,
+    "authors": [
+     "jfbischoff"
+    ]
+   }
+  ],
+  "contributors": [
+   "ikaddoura",
+   "jarosmirk",
+   "jfbischoff",
+   "kainagel",
+   "langkoos",
+   "tthunig"
+  ]
+ }
+}

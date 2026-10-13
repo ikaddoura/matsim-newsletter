@@ -1,0 +1,54 @@
+<!doctype html><html lang="de"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>KW 36/2026 – MATSim Weekly</title><link rel="stylesheet" href="../style.css"></head><body>
+<header class="site"><div><a class="brand" href="../index.html">MATSim Weekly</a><span class="muted">Entwicklungen auf <a href="https://github.com/matsim-org">github.com/matsim-org</a></span></div></header>
+<main><nav class="pager"><span></span><a href="../weeks/2026-W37.html">KW 37/2026 →</a></nav>
+<article class="card">
+<h1>KW 36/2026</h1>
+<div class="muted">31.08.2026 – 06.09.2026</div>
+<div class="stats"><div><b>7</b><span>PRs gemergt</span></div><div><b>0</b><span>Releases</span></div><div><b>2</b><span>neue Issues</span></div><div><b>1</b><span>Issues geschlossen</span></div><div><b>6</b><span>Contributors</span></div></div>
+<div class="summary"><h3>Das Wichtigste in Kürze</h3>
+<ul>
+<li>Keine neuen Releases und keine neuen Repositories in KW 36/2026.</li>
+<li>Die Pseudosimulation wurde umfassend überarbeitet, getestet und beschleunigt (<a href="https://github.com/matsim-org/matsim-libs/pull/5122">PR #5122</a>).</li>
+<li>DRT-Rebalancing mit Min-Cost-Flow erhielt Performance-Verbesserungen samt maximaler Relocation-Distanz (<a href="https://github.com/matsim-org/matsim-libs/pull/5156">PR #5156</a>).</li>
+<li>Fehlerkorrektur bei zeitvarianten Netzwerken: Change-Events mit identischer Startzeit gehen nicht mehr verloren (<a href="https://github.com/matsim-org/matsim-libs/pull/5153">PR #5153</a>).</li>
+</ul>
+
+<h3>Bugfixes</h3>
+<ul>
+<li><strong>Netzwerk:</strong> <code>TimeVariantLinkImpl</code> speicherte Change-Events in einer <code>TreeMap</code> nach Startzeit. Ein zweites Event auf demselben Link zur selben Sekunde verdrängte das erste, und <code>recalc()</code> warf dann eine Exception, weil die erwartete Anzahl der Events nicht übereinstimmte. Jetzt bleiben alle Events erhalten (<a href="https://github.com/matsim-org/matsim-libs/pull/5153">PR #5153</a>).</li>
+<li><strong>Pseudosimulation:</strong> Das Skript <code>quality-metrics.sh</code> zählte mit <code>grep -c</code> Zeilen statt SpotBugs-Funde. Da SpotBugs das gesamte <code>&lt;BugCollection&gt;</code>-Element in einer Zeile schreibt, ergab jede Anzahl größer null den Wert 1. Jetzt werden die Funde korrekt gezählt (<a href="https://github.com/matsim-org/matsim-libs/pull/5158">PR #5158</a>).</li>
+</ul>
+
+<h3>Performance und Features</h3>
+<ul>
+<li><strong>DRT:</strong> Performance-Tweaks für das Min-Cost-Flow-Rebalancing, dazu eine Obergrenze für die Distanz von Relocations (<a href="https://github.com/matsim-org/matsim-libs/pull/5156">PR #5156</a>).</li>
+<li><strong>DSim:</strong> Die IdleStrategy im Threadpool ist jetzt konfigurierbar. Hintergrund sind Probleme mit den DSim-Integrationstests. Vermutet wird, dass der <code>BusyThreadpool</code> beim Warten auf neue Tasks aktiv wartet (Busy-Spin). Das hatte auf Maschinen mit genügend CPU-Kernen die Performance deutlich verbessert (<a href="https://github.com/matsim-org/matsim-libs/pull/5150">PR #5150</a>).</li>
+</ul>
+
+<h3>Contribs</h3>
+<ul>
+<li><strong>Pseudosimulation:</strong> Das Contrib hatte nur 2 Tests und etwa 9 % Zeilenabdeckung. Es wurde rehabilitiert, getestet, refaktoriert und beschleunigt (<a href="https://github.com/matsim-org/matsim-libs/pull/5122">PR #5122</a>).</li>
+<li><strong>Small-Scale-Traffic-Generation:</strong> Maintenance mit kleinerem öffentlichem API-Umfang, angepasster Benennung von Variablen und Methoden sowie zusätzlichen Kommentaren und Fragen (<a href="https://github.com/matsim-org/matsim-libs/pull/5152">PR #5152</a>).</li>
+</ul>
+
+<h3>Issues, Community und Website</h3>
+<ul>
+<li><a href="https://github.com/matsim-org/matsim-libs/issues/5147">Issue #5147</a>: <code>DSimIntegrationTest.runDistributed</code> überschreitet in etwa 15 % der CI-Läufe das Zeitbudget von 600 s.</li>
+<li><a href="https://github.com/matsim-org/matsim-libs/issues/5154">Issue #5154</a>: Frage, wie sich der Einfluss von DRT auf den Modal Split bei aktiviertem Replanning bewerten lässt.</li>
+<li>Die Website enthält jetzt das FreighTSim-Programm (<a href="https://github.com/matsim-org/website-11ty/pull/17">PR #17</a>).</li>
+</ul>
+
+<h3>Infrastruktur</h3>
+<p>Aktivstes Repository war <code>matsim-libs</code> mit 11 Commits. Insgesamt waren 6 Contributor beteiligt. Sechs weitere PRs stammten von Bots, vermutlich Dependency-Updates.</p></div>
+<section><h2>🗓️ Monatsrückblick</h2><ul><li><a href="../months/2026-09.html">September 2026</a> <span class="muted">01.09.2026 – 30.09.2026</span></li></ul></section>
+
+
+<section><h2>🔀 Gemergte Pull Requests</h2><h4>matsim-libs (6)</h4><ul><li><a href="https://github.com/matsim-org/matsim-libs/pull/5158">#5158</a> fix(pseudosimulation): count SpotBugs findings, not lines that contain one <span class="muted">– @langkoos</span></li><li><a href="https://github.com/matsim-org/matsim-libs/pull/5156">#5156</a> perf(drt): performance tweaks for min cost flow rebalancing, including max distance cap for relocations <span class="muted">– @nkuehnel</span></li><li><a href="https://github.com/matsim-org/matsim-libs/pull/5153">#5153</a> fix(network): keep every change event when several share a start time <span class="muted">– @langkoos</span></li><li><a href="https://github.com/matsim-org/matsim-libs/pull/5152">#5152</a> maintenance(small-scale-traffic-generation): reduce public footprint; adjust naming of variables and methods; add comments and questions <span class="muted">– @kainagel</span></li><li><a href="https://github.com/matsim-org/matsim-libs/pull/5150">#5150</a> feat(dsim): Make IdleStrategy in Threadpool configurable <span class="muted">– @Janekdererste</span></li><li><a href="https://github.com/matsim-org/matsim-libs/pull/5122">#5122</a> refactor(pseudosimulation): Rehabilitate, test, refactor, and accelerate pseudosimulation <span class="muted">– @MartinPeris</span></li></ul><h4>website-11ty (1)</h4><ul><li><a href="https://github.com/matsim-org/website-11ty/pull/17">#17</a> add FreighTSim Programme <span class="muted">– @kt86</span></li></ul><p class="muted">Zusätzlich 6 automatische Dependency-/Bot-PRs.</p></section>
+<section><h2>📈 Aktivste Repositories</h2><ul><li><a href="https://github.com/matsim-org/matsim-libs">matsim-libs</a>: 6 Commits (+5 Bot), 5 Autor:innen</li><li><a href="https://github.com/matsim-org/website-11ty">website-11ty</a>: 4 Commits, 1 Autor:innen</li><li><a href="https://github.com/matsim-org/pt2matsim">pt2matsim</a>: 0 Commits (+1 Bot), 0 Autor:innen</li></ul></section>
+<section><h2>🐞 Neue Issues</h2><ul><li><strong>matsim-libs</strong> <a href="https://github.com/matsim-org/matsim-libs/issues/5154">#5154</a> How to evaluate the impact of introducing DRT on overall mode share with replanning enabled</li><li><strong>matsim-libs</strong> <a href="https://github.com/matsim-org/matsim-libs/issues/5147">#5147</a> DSimIntegrationTest.runDistributed intermittently exceeds its 600 s budget in CI (~15% of runs)</li></ul></section>
+<section><h2>👥 Contributors</h2><p><a href="https://github.com/Janekdererste">@Janekdererste</a>, <a href="https://github.com/kainagel">@kainagel</a>, <a href="https://github.com/kt86">@kt86</a>, <a href="https://github.com/langkoos">@langkoos</a>, <a href="https://github.com/MartinPeris">@MartinPeris</a>, <a href="https://github.com/nkuehnel">@nkuehnel</a></p></section>
+<p class="muted" style="font-size:13px;margin-top:28px">Erstellt am 13.10.2026 · Zusammenfassung: copilot · <a href="../data/weeks/2026-W36.json">Rohdaten (JSON)</a></p>
+</article></main>
+<footer>Automatisch erstellt aus öffentlichen GitHub-Daten. KI-Zusammenfassungen können Fehler enthalten – Details in den verlinkten PRs.</footer>
+</body></html>

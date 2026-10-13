@@ -1,0 +1,43 @@
+<!doctype html><html lang="de"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>KW 40/2026 – MATSim Weekly</title><link rel="stylesheet" href="../style.css"></head><body>
+<header class="site"><div><a class="brand" href="../index.html">MATSim Weekly</a><span class="muted">Entwicklungen auf <a href="https://github.com/matsim-org">github.com/matsim-org</a></span></div></header>
+<main><nav class="pager"><a href="../weeks/2026-W39.html">← KW 39/2026</a><a href="../weeks/2026-W41.html">KW 41/2026 →</a></nav>
+<article class="card">
+<h1>KW 40/2026</h1>
+<div class="muted">28.09.2026 – 04.10.2026</div>
+<div class="stats"><div><b>1</b><span>PRs gemergt</span></div><div><b>0</b><span>Releases</span></div><div><b>2</b><span>neue Issues</span></div><div><b>0</b><span>Issues geschlossen</span></div><div><b>2</b><span>Contributors</span></div></div>
+<div class="summary"><h3>Das Wichtigste in Kürze</h3>
+<ul>
+<li>Ruhige Woche (28.09.–04.10.2026): keine neuen Releases und keine neuen Repositories.</li>
+<li>In <code>matsim-libs</code> wurde ein PR gemergt, der die Beschriftung von Stichproben-Prozentwerten vereinheitlicht.</li>
+<li>Zwei neue Issues zum DSim: fehlendes Scoring von Agenten ohne Legs und ein Laufzeitproblem bei Shaded-Jars.</li>
+<li>Außerdem gab es drei Bot-PRs und Commits in <code>website-11ty</code> und <code>pt2matsim</code>.</li>
+</ul>
+
+<h3>Bugfixes und Verbesserungen</h3>
+<ul>
+<li><a href="https://github.com/matsim-org/matsim-libs/pull/5193">PR #5193 – fix: Standardize sample percentage labels</a> (rewertvsp): Neu ist <code>PopulationUtils.getSampleLabel</code>. Die Methode formatiert Bruchteile als Prozent-Labels mit bis zu vier Nachkommastellen und ohne überflüssige Nullen. Die Labels werden einheitlich verwendet für heruntergesampelte Populationen, die <code>SampleOptions</code>-CLI-Optionen und Dateinamen sowie für Ausgaben des Kleinskaligen Wirtschaftsverkehrs. Zusätzlich wird ein Fehler aus #5185 in <code>DownSamplePopulation</code> behoben. Für Nutzer bedeutet das konsistentere Sample-Bezeichnungen in Dateinamen und Optionen. Der Beschreibungstext nennt außerdem eine korrigierte Standard-Umrechnung von Prozent in Bruchteile; die Details sind in den Daten abgeschnitten.</li>
+</ul>
+
+<h3>Neue Issues (DSim)</h3>
+<ul>
+<li><a href="https://github.com/matsim-org/matsim-libs/issues/5199">#5199</a>: Laut Meldung von d-roeder scort DSim Agenten nicht, deren gewählter Plan keine Legs enthält (<code>BackpackScoring</code>). Dadurch weichen die Scores von denen eines qsim-Laufs ab, und <code>scorestats</code> kann verfälscht sein.</li>
+<li><a href="https://github.com/matsim-org/matsim-libs/issues/5198">#5198</a>: DSim braucht zur Laufzeit bei Shaded-Jars <code>--add-exports java.base/jdk.internal.misc</code>. Das trat beim Ausführen des matsim-berlin-scenario mit DSim auf. Der Melder hält den Workaround nicht für eine endgültige Lösung.</li>
+</ul>
+
+<h3>Infrastruktur und Sonstiges</h3>
+<ul>
+<li>Drei Bot-PRs, vermutlich Dependency-Updates (die Daten nennen keine Details), wurden gemergt.</li>
+<li>Aktivität gab es zudem in <code>website-11ty</code> (2 Commits) und <code>pt2matsim</code> (1 Commit, Bot). Inhalte sind in den Daten nicht angegeben. Insgesamt waren 2 Contributor beteiligt.</li>
+</ul></div>
+
+
+
+<section><h2>🔀 Gemergte Pull Requests</h2><h4>matsim-libs (1)</h4><ul><li><a href="https://github.com/matsim-org/matsim-libs/pull/5193">#5193</a> fix: Standardize sample percentage labels <span class="muted">– @rewertvsp</span></li></ul><p class="muted">Zusätzlich 3 automatische Dependency-/Bot-PRs.</p></section>
+<section><h2>📈 Aktivste Repositories</h2><ul><li><a href="https://github.com/matsim-org/website-11ty">website-11ty</a>: 2 Commits, 1 Autor:innen</li><li><a href="https://github.com/matsim-org/matsim-libs">matsim-libs</a>: 1 Commits (+2 Bot), 1 Autor:innen</li><li><a href="https://github.com/matsim-org/pt2matsim">pt2matsim</a>: 0 Commits (+1 Bot), 0 Autor:innen</li></ul></section>
+<section><h2>🐞 Neue Issues</h2><ul><li><strong>matsim-libs</strong> <a href="https://github.com/matsim-org/matsim-libs/issues/5199">#5199</a> DSim never scores agents whose selected plan has no legs, corrupting `scorestats`</li><li><strong>matsim-libs</strong> <a href="https://github.com/matsim-org/matsim-libs/issues/5198">#5198</a> DSim requires `--add-exports java.base/jdk.internal.misc` at runtime for shaded jars</li></ul></section>
+<section><h2>👥 Contributors</h2><p><a href="https://github.com/langkoos">@langkoos</a>, <a href="https://github.com/rewertvsp">@rewertvsp</a></p></section>
+<p class="muted" style="font-size:13px;margin-top:28px">Erstellt am 13.10.2026 · Zusammenfassung: copilot · <a href="../data/weeks/2026-W40.json">Rohdaten (JSON)</a></p>
+</article></main>
+<footer>Automatisch erstellt aus öffentlichen GitHub-Daten. KI-Zusammenfassungen können Fehler enthalten – Details in den verlinkten PRs.</footer>
+</body></html>

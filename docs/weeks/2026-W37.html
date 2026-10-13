@@ -1,0 +1,46 @@
+<!doctype html><html lang="de"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>KW 37/2026 – MATSim Weekly</title><link rel="stylesheet" href="../style.css"></head><body>
+<header class="site"><div><a class="brand" href="../index.html">MATSim Weekly</a><span class="muted">Entwicklungen auf <a href="https://github.com/matsim-org">github.com/matsim-org</a></span></div></header>
+<main><nav class="pager"><a href="../weeks/2026-W36.html">← KW 36/2026</a><a href="../weeks/2026-W38.html">KW 38/2026 →</a></nav>
+<article class="card">
+<h1>KW 37/2026</h1>
+<div class="muted">07.09.2026 – 13.09.2026</div>
+<div class="stats"><div><b>5</b><span>PRs gemergt</span></div><div><b>0</b><span>Releases</span></div><div><b>1</b><span>neue Issues</span></div><div><b>1</b><span>Issues geschlossen</span></div><div><b>5</b><span>Contributors</span></div></div>
+<div class="summary"><h3>Das Wichtigste in Kürze</h3>
+<ul>
+<li>Ruhige Woche: Es gab keine neuen Releases und keine neuen Repositories.</li>
+<li>Die <code>IOUtils</code> in matsim-libs unterstützen jetzt ZIP als Kompressionsformat.</li>
+<li>Die verteilte Simulation (DSim) soll ohne zusätzliche Abhängigkeiten als Ersatz für die <code>mobsim</code> nutzbar sein.</li>
+<li>matsim-episim-libs wurde auf MATSim 2026 und Java 25 migriert und war mit 35 Commits das aktivste Repository.</li>
+</ul>
+
+<h3>Core und Simulation (matsim-libs)</h3>
+<ul>
+<li><strong>ZIP in IOUtils:</strong> ZIP kommt als fünftes Einzeldatei-Format neben gzip, lz4, bz2 und zst hinzu. Eine Datei entspricht einem <code>ZipEntry</code> mit dem Basisnamen, z.B. wird aus <code>output_plans.xml.zip</code> der Eintrag <code>output_plans.xml</code>. Es ist keine neue Abhängigkeit nötig, da <code>java.util.zip</code> genutzt wird. <a href="https://github.com/matsim-org/matsim-libs/pull/5163">PR #5163</a></li>
+<li><strong>DSim:</strong> Die Abhängigkeit <code>fory</code> und der gesamte Serialisierungscode wandern in den Contrib "distributed simulation". Den Contrib braucht man nur, wenn man auf mehreren Rechenknoten simuliert. <a href="https://github.com/matsim-org/matsim-libs/pull/5167">PR #5167</a></li>
+<li><strong>Refactoring:</strong> Für <code>decideOnCoordForActivity</code> gibt es eine Überladung ohne <code>Scenario</code>. <a href="https://github.com/matsim-org/matsim-libs/pull/5169">PR #5169</a></li>
+<li><strong>Neu offen:</strong> Netzwerk-Tools für Infrastrukturklassifizierung und Höhendaten im Bicycle-Contrib, mit OSM- und SUMO-Pfad. <a href="https://github.com/matsim-org/matsim-libs/pull/5168">PR #5168</a></li>
+</ul>
+
+<h3>Episim</h3>
+<ul>
+<li><strong>Upgrade auf MATSim 2026 / Java 25:</strong> Dazu gehören aktualisierte Abhängigkeiten, die Anpassung an API-Änderungen, die Migration von Tests auf JUnit 5 und eine aktualisierte CI-Konfiguration. Zudem wird die Reflection auf <code>SplittableRandom</code> ersetzt, die durch die strengere Kapselung blockiert ist. <a href="https://github.com/matsim-org/matsim-episim-libs/pull/124">PR #124</a></li>
+<li><strong>Batch-Output-Packing:</strong> Neue Tools verpacken einen fertigen Episim-Lauf für den covid-sim.info-Visualiser, der auf ein ZIP-basiertes Eingabeformat umgestellt wurde. Es kommen nur neue Klassen hinzu, bestehender Simulationscode bleibt unberührt. <a href="https://github.com/matsim-org/matsim-episim-libs/pull/125">PR #125</a></li>
+</ul>
+
+<h3>Sonstiges</h3>
+<ul>
+<li>Neues Issue in vsp-internal: Der Python-SrV-Reader soll auch SrV 2018 und 2023 lesen können, die sich unterscheiden. <a href="https://github.com/matsim-org/vsp-internal/issues/10">Issue #10</a></li>
+<li>In pt2matsim gab es 3 Commits, alle von Bots. Zusätzlich wurden 5 Bot-PRs gemergt, vermutlich Dependency-Updates.</li>
+</ul></div>
+<section><h2>🗓️ Monatsrückblick</h2><ul><li><a href="../months/2026-09.html">September 2026</a> <span class="muted">01.09.2026 – 30.09.2026</span></li></ul></section>
+
+
+<section><h2>🔀 Gemergte Pull Requests</h2><h4>matsim-libs (3)</h4><ul><li><a href="https://github.com/matsim-org/matsim-libs/pull/5169">#5169</a> refactor(core): add decideOnCoordForActivity overload without Scenario <span class="muted">– @nkuehnel</span></li><li><a href="https://github.com/matsim-org/matsim-libs/pull/5167">#5167</a> refactor(dsim): decouple serialization and message type registry <span class="muted">– @Janekdererste</span></li><li><a href="https://github.com/matsim-org/matsim-libs/pull/5163">#5163</a> feat(core): support ZIP as a compression format in IOUtils <span class="muted">– @mfrawley-moia</span></li></ul><h4>matsim-episim-libs (2)</h4><ul><li><a href="https://github.com/matsim-org/matsim-episim-libs/pull/125">#125</a> Js/Add batch output packing for the covid-sim.info visualiser <span class="muted">– @jarosmirk</span></li><li><a href="https://github.com/matsim-org/matsim-episim-libs/pull/124">#124</a> JS/ Upgrade Episim to MATSim 2026 / Java 25 <span class="muted">– @jarosmirk</span></li></ul><p class="muted">Zusätzlich 5 automatische Dependency-/Bot-PRs.</p></section>
+<section><h2>📈 Aktivste Repositories</h2><ul><li><a href="https://github.com/matsim-org/matsim-episim-libs">matsim-episim-libs</a>: 35 Commits, 2 Autor:innen</li><li><a href="https://github.com/matsim-org/matsim-libs">matsim-libs</a>: 3 Commits (+2 Bot), 3 Autor:innen</li><li><a href="https://github.com/matsim-org/pt2matsim">pt2matsim</a>: 0 Commits (+3 Bot), 0 Autor:innen</li></ul></section>
+<section><h2>🐞 Neue Issues</h2><ul><li><strong>vsp-internal</strong> <a href="https://github.com/matsim-org/vsp-internal/issues/10">#10</a> modify python srv reader to be able to read srv18 and srv23 (which are different)</li></ul></section>
+<section><h2>👥 Contributors</h2><p><a href="https://github.com/jakobrehmann">@jakobrehmann</a>, <a href="https://github.com/Janekdererste">@Janekdererste</a>, <a href="https://github.com/jarosmirk">@jarosmirk</a>, <a href="https://github.com/mfrawley-moia">@mfrawley-moia</a>, <a href="https://github.com/nkuehnel">@nkuehnel</a></p></section>
+<p class="muted" style="font-size:13px;margin-top:28px">Erstellt am 13.10.2026 · Zusammenfassung: copilot · <a href="../data/weeks/2026-W37.json">Rohdaten (JSON)</a></p>
+</article></main>
+<footer>Automatisch erstellt aus öffentlichen GitHub-Daten. KI-Zusammenfassungen können Fehler enthalten – Details in den verlinkten PRs.</footer>
+</body></html>

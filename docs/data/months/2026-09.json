@@ -1,0 +1,522 @@
+{
+ "kind": "month",
+ "id": "2026-09",
+ "org": "matsim-org",
+ "start": "2026-09-01T00:00:00.000Z",
+ "end": "2026-10-01T00:00:00.000Z",
+ "generatedAt": "2026-10-13T14:09:18.035Z",
+ "summaryBy": "copilot",
+ "summary": "<h3>Das Wichtigste in Kürze</h3>\n<ul>\n<li>Im September gab es keine neuen Releases und keine neuen Repositories.</li>\n<li><strong>DSim</strong> (verteilte Simulation) wurde weiter ausgebaut: Performance-Verbesserungen, entkoppelte Serialisierung und konfigurierbare Threadpool-Strategie.</li>\n<li><strong>matsim-episim-libs</strong> war am aktivsten (66 Commits): Umstellung auf MATSim 2026 / Java 25 und eine pathogenunabhängige Konfiguration.</li>\n<li>Mehrere Bugfixes in matsim-libs: Dekongestions-Maut, Zeitvariante Netzwerk-Events, Sample-Labels.</li>\n<li><code>IOUtils</code> unterstützt jetzt ZIP, und das DRT-Rebalancing wurde beschleunigt.</li>\n<li>Offene Punkte: DSim-Tests in IDEs und fehlschlagende Full-Integration-Tests unter Windows (Pseudosimulation).</li>\n</ul>\n\n<h3>DSim</h3>\n<ul>\n<li>Performance und Usability: bessere METIS-Fehlerlogs, Lösung eines Problems mit parallelen Links und Schleifenlinks sowie Partitionierung vor der ersten Iteration (<a href=\"https://github.com/matsim-org/matsim-libs/pull/5189\">#5189</a>).</li>\n<li>Die <code>fory</code>-Abhängigkeit wurde ins Distributed-Simulation-Modul verschoben, damit DSim ohne Zusatzabhängigkeiten als Drop-in-Ersatz für die <code>mobsim</code> nutzbar ist (<a href=\"https://github.com/matsim-org/matsim-libs/pull/5167\">#5167</a>).</li>\n<li>Die <code>IdleStrategy</code> im Threadpool ist konfigurierbar (<a href=\"https://github.com/matsim-org/matsim-libs/pull/5150\">#5150</a>), und <code>threadScheduling</code> heißt nun <code>taskScheduling</code> (<a href=\"https://github.com/matsim-org/matsim-libs/pull/5181\">#5181</a>). Beides betrifft bestehende Konfigurationen.</li>\n<li>Die Änderung an der Idle-Strategie zielt auf die seit längerem instabilen DSim-Integrationstests.</li>\n</ul>\n\n<h3>Neue Features und Verbesserungen in matsim-libs</h3>\n<ul>\n<li><code>IOUtils</code> unterstützt ZIP als fünftes Einzeldatei-Kompressionsformat neben gzip, lz4, bz2 und zst (<a href=\"https://github.com/matsim-org/matsim-libs/pull/5163\">#5163</a>).</li>\n<li>DRT: Performance-Tweaks für das Min-Cost-Flow-Rebalancing, inklusive maximaler Distanz für Relocations (<a href=\"https://github.com/matsim-org/matsim-libs/pull/5156\">#5156</a>).</li>\n<li>Neue Überladung <code>decideOnCoordForActivity</code> ohne <code>Scenario</code> (<a href=\"https://github.com/matsim-org/matsim-libs/pull/5169\">#5169</a>).</li>\n</ul>\n\n<h3>Bugfixes</h3>\n<ul>\n<li>Decongestion Pricing: Agenten zahlen nun nach Link-Eintrittszeit, passend zur Erfassung der Staudaten. Das korrigiert die Mautberechnung (<a href=\"https://github.com/matsim-org/matsim-libs/pull/5176\">#5176</a>).</li>\n<li><code>TimeVariantLinkImpl</code> behält alle Change-Events, auch wenn mehrere dieselbe Startzeit haben. Zuvor wurde das erste verdrängt (<a href=\"https://github.com/matsim-org/matsim-libs/pull/5153\">#5153</a>).</li>\n<li>Sample-Größen bei Downsampling werden korrekt benannt (<a href=\"https://github.com/matsim-org/matsim-libs/pull/5185\">#5185</a>). Das Folgeproblem wurde über das neue <code>PopulationUtils.getSampleLabel</code> behoben (<a href=\"https://github.com/matsim-org/matsim-libs/pull/5193\">#5193</a>).</li>\n<li>Pseudosimulation: Das Qualitätsskript zählt SpotBugs-Funde statt Zeilen (<a href=\"https://github.com/matsim-org/matsim-libs/pull/5158\">#5158</a>).</li>\n</ul>\n\n<h3>Dokumentation und Aufräumarbeiten</h3>\n<ul>\n<li>Fehlerhafte Noise-Summationsmethoden wurden mit Kommentaren und Warnungen versehen (<a href=\"https://github.com/matsim-org/matsim-libs/pull/5178\">#5178</a>).</li>\n<li>Small-scale-traffic-generation: kleinere öffentliche Oberfläche und bessere Benennung (<a href=\"https://github.com/matsim-org/matsim-libs/pull/5152\">#5152</a>).</li>\n</ul>\n\n<h3>Episim</h3>\n<ul>\n<li>Upgrade auf MATSim 2026 und Java 25 (<a href=\"https://github.com/matsim-org/matsim-episim-libs/pull/124\">#124</a>).</li>\n<li>Pathogenunabhängige Konfiguration: Pathogene, Übertragungswege, Antikörper und Infektionsepisoden ersetzen die bisherigen SARS-CoV-2-spezifischen Enums und Annahmen (<a href=\"https://github.com/matsim-org/matsim-episim-libs/pull/126\">#126</a>).</li>\n<li>Immunität ist nun ein eigenes, pro Lauf konfigurierbares Modell, und Impfungen sind stammabhängig (<a href=\"https://github.com/matsim-org/matsim-episim-libs/pull/127\">#127</a>).</li>\n<li>Neues Batch-Output-Packing für den covid-sim.info-Visualiser (<a href=\"https://github.com/matsim-org/matsim-episim-libs/pull/125\">#125</a>).</li>\n</ul>\n\n<h3>Offen und in Diskussion</h3>\n<ul>\n<li>Neue PRs: pt2matsim zu gerichteten Reserved Lanes und PT-only-Kapazität (<a href=\"https://github.com/matsim-org/pt2matsim/pull/444\">#444</a>) sowie Netzwerk-Tools für Fahrrad-Infrastruktur und Höhen (<a href=\"https://github.com/matsim-org/matsim-libs/pull/5168\">#5168</a>).</li>\n<li>Issues: DSim-Tests lassen sich in VSCode und IntelliJ nicht ausführen (<a href=\"https://github.com/matsim-org/matsim-libs/issues/5187\">#5187</a>). Die Full Integration scheitert unter Windows an der Pseudosimulation (<a href=\"https://github.com/matsim-org/matsim-libs/issues/5172\">#5172</a>). Außerdem gibt es eine Nutzerfrage zur DRT-Wirkung auf den Modal Split (<a href=\"https://github.com/matsim-org/matsim-libs/issues/5154\">#5154</a>).</li>\n</ul>\n\n<h3>Sonstiges</h3>\n<p>Zusätzlich wurden 16 Bot-PRs, vermutlich Dependency-Updates, gemergt. Die Website (<code>website-11ty</code>) war mit 15 Commits ebenfalls aktiv. Insgesamt trugen 14 Personen bei.</p>",
+ "data": {
+  "newRepos": [],
+  "releases": [],
+  "mergedPRs": [
+   {
+    "repo": "matsim-libs",
+    "number": 5193,
+    "title": "fix: Standardize sample percentage labels",
+    "url": "https://github.com/matsim-org/matsim-libs/pull/5193",
+    "author": "rewertvsp",
+    "bot": false,
+    "labels": []
+   },
+   {
+    "repo": "matsim-libs",
+    "number": 5189,
+    "title": "perf(dsim): Improve several modules for DSim",
+    "url": "https://github.com/matsim-org/matsim-libs/pull/5189",
+    "author": "rakow",
+    "bot": false,
+    "labels": []
+   },
+   {
+    "repo": "matsim-episim-libs",
+    "number": 127,
+    "title": "Js/refactor vaccinations to make it strain dependent",
+    "url": "https://github.com/matsim-org/matsim-episim-libs/pull/127",
+    "author": "jarosmirk",
+    "bot": false,
+    "labels": []
+   },
+   {
+    "repo": "matsim-libs",
+    "number": 5185,
+    "title": "fix: correct population names for downsampled pop sizes",
+    "url": "https://github.com/matsim-org/matsim-libs/pull/5185",
+    "author": "simei94",
+    "bot": false,
+    "labels": []
+   },
+   {
+    "repo": "matsim-libs",
+    "number": 5181,
+    "title": "refactor(dsim): change `threadScheduling` to `taskScheduling`",
+    "url": "https://github.com/matsim-org/matsim-libs/pull/5181",
+    "author": "Janekdererste",
+    "bot": false,
+    "labels": []
+   },
+   {
+    "repo": "matsim-libs",
+    "number": 5179,
+    "title": "build(deps): bump org.apache.fory:fory-core from 1.7.2 to 1.7.3",
+    "url": "https://github.com/matsim-org/matsim-libs/pull/5179",
+    "author": "dependabot[bot]",
+    "bot": true,
+    "labels": [
+     "dependencies",
+     "java"
+    ]
+   },
+   {
+    "repo": "matsim-libs",
+    "number": 5178,
+    "title": "docs: add comments and warnings to faulty noise summation methods",
+    "url": "https://github.com/matsim-org/matsim-libs/pull/5178",
+    "author": "kainagel",
+    "bot": false,
+    "labels": []
+   },
+   {
+    "repo": "matsim-libs",
+    "number": 5177,
+    "title": "build(deps): bump the bag-of-cats group across 1 directory with 4 updates",
+    "url": "https://github.com/matsim-org/matsim-libs/pull/5177",
+    "author": "dependabot[bot]",
+    "bot": true,
+    "labels": [
+     "dependencies",
+     "java"
+    ]
+   },
+   {
+    "repo": "matsim-episim-libs",
+    "number": 126,
+    "title": "Pathogen-agnostic configuration: pathogens, transmission routes, antibodies and infection episodes",
+    "url": "https://github.com/matsim-org/matsim-episim-libs/pull/126",
+    "author": "jarosmirk",
+    "bot": false,
+    "labels": []
+   },
+   {
+    "repo": "matsim-libs",
+    "number": 5176,
+    "title": "fix(decongestion pricing): Correct toll calculation ",
+    "url": "https://github.com/matsim-org/matsim-libs/pull/5176",
+    "author": "tthunig",
+    "bot": false,
+    "labels": []
+   },
+   {
+    "repo": "matsim-libs",
+    "number": 5175,
+    "title": "build(deps): bump the bag-of-cats group across 1 directory with 3 updates",
+    "url": "https://github.com/matsim-org/matsim-libs/pull/5175",
+    "author": "dependabot[bot]",
+    "bot": true,
+    "labels": [
+     "dependencies",
+     "java"
+    ]
+   },
+   {
+    "repo": "matsim-libs",
+    "number": 5174,
+    "title": "build(deps): bump github/codeql-action from 4.37.9 to 4.38.0 in the github-actions group",
+    "url": "https://github.com/matsim-org/matsim-libs/pull/5174",
+    "author": "dependabot[bot]",
+    "bot": true,
+    "labels": [
+     "dependencies",
+     "github_actions"
+    ]
+   },
+   {
+    "repo": "matsim-libs",
+    "number": 5173,
+    "title": "build(deps): bump org.apache.fory:fory-core from 1.7.1 to 1.7.2",
+    "url": "https://github.com/matsim-org/matsim-libs/pull/5173",
+    "author": "dependabot[bot]",
+    "bot": true,
+    "labels": [
+     "dependencies",
+     "java"
+    ]
+   },
+   {
+    "repo": "matsim-libs",
+    "number": 5169,
+    "title": "refactor(core): add decideOnCoordForActivity overload without Scenario",
+    "url": "https://github.com/matsim-org/matsim-libs/pull/5169",
+    "author": "nkuehnel",
+    "bot": false,
+    "labels": []
+   },
+   {
+    "repo": "matsim-episim-libs",
+    "number": 125,
+    "title": "Js/Add batch output packing for the covid-sim.info visualiser",
+    "url": "https://github.com/matsim-org/matsim-episim-libs/pull/125",
+    "author": "jarosmirk",
+    "bot": false,
+    "labels": []
+   },
+   {
+    "repo": "matsim-libs",
+    "number": 5167,
+    "title": "refactor(dsim): decouple serialization and message type registry",
+    "url": "https://github.com/matsim-org/matsim-libs/pull/5167",
+    "author": "Janekdererste",
+    "bot": false,
+    "labels": []
+   },
+   {
+    "repo": "matsim-episim-libs",
+    "number": 124,
+    "title": "JS/ Upgrade Episim to MATSim 2026 / Java 25",
+    "url": "https://github.com/matsim-org/matsim-episim-libs/pull/124",
+    "author": "jarosmirk",
+    "bot": false,
+    "labels": []
+   },
+   {
+    "repo": "matsim-libs",
+    "number": 5166,
+    "title": "build(deps): bump the bag-of-cats group across 1 directory with 16 updates",
+    "url": "https://github.com/matsim-org/matsim-libs/pull/5166",
+    "author": "dependabot[bot]",
+    "bot": true,
+    "labels": [
+     "dependencies",
+     "java"
+    ]
+   },
+   {
+    "repo": "pt2matsim",
+    "number": 443,
+    "title": "Bump org.checkerframework:checker-qual from 4.2.2 to 4.2.3",
+    "url": "https://github.com/matsim-org/pt2matsim/pull/443",
+    "author": "dependabot[bot]",
+    "bot": true,
+    "labels": [
+     "dependencies",
+     "java"
+    ]
+   },
+   {
+    "repo": "matsim-libs",
+    "number": 5164,
+    "title": "build(deps): bump advanced-security/maven-dependency-submission-action from 5.0.0 to 6.0.1 in the github-actions group",
+    "url": "https://github.com/matsim-org/matsim-libs/pull/5164",
+    "author": "dependabot[bot]",
+    "bot": true,
+    "labels": [
+     "dependencies",
+     "github_actions"
+    ]
+   },
+   {
+    "repo": "matsim-libs",
+    "number": 5163,
+    "title": "feat(core): support ZIP as a compression format in IOUtils",
+    "url": "https://github.com/matsim-org/matsim-libs/pull/5163",
+    "author": "mfrawley-moia",
+    "bot": false,
+    "labels": []
+   },
+   {
+    "repo": "pt2matsim",
+    "number": 442,
+    "title": "Bump org.apache.maven.plugins:maven-surefire-plugin from 3.5.6 to 3.6.0",
+    "url": "https://github.com/matsim-org/pt2matsim/pull/442",
+    "author": "dependabot[bot]",
+    "bot": true,
+    "labels": [
+     "dependencies",
+     "java"
+    ]
+   },
+   {
+    "repo": "pt2matsim",
+    "number": 441,
+    "title": "Bump org.apache.maven.plugins:maven-failsafe-plugin from 3.5.6 to 3.6.0",
+    "url": "https://github.com/matsim-org/pt2matsim/pull/441",
+    "author": "dependabot[bot]",
+    "bot": true,
+    "labels": [
+     "dependencies",
+     "java"
+    ]
+   },
+   {
+    "repo": "matsim-libs",
+    "number": 5159,
+    "title": "build(deps): bump fory.version from 1.7.0 to 1.7.1",
+    "url": "https://github.com/matsim-org/matsim-libs/pull/5159",
+    "author": "dependabot[bot]",
+    "bot": true,
+    "labels": [
+     "dependencies",
+     "java"
+    ]
+   },
+   {
+    "repo": "matsim-libs",
+    "number": 5158,
+    "title": "fix(pseudosimulation): count SpotBugs findings, not lines that contain one",
+    "url": "https://github.com/matsim-org/matsim-libs/pull/5158",
+    "author": "langkoos",
+    "bot": false,
+    "labels": []
+   },
+   {
+    "repo": "pt2matsim",
+    "number": 440,
+    "title": "Bump org.apache.maven.plugins:maven-compiler-plugin from 3.15.0 to 3.16.0",
+    "url": "https://github.com/matsim-org/pt2matsim/pull/440",
+    "author": "dependabot[bot]",
+    "bot": true,
+    "labels": [
+     "dependencies",
+     "java"
+    ]
+   },
+   {
+    "repo": "matsim-libs",
+    "number": 5156,
+    "title": "perf(drt): performance tweaks for min cost flow rebalancing, including max distance cap for relocations",
+    "url": "https://github.com/matsim-org/matsim-libs/pull/5156",
+    "author": "nkuehnel",
+    "bot": false,
+    "labels": []
+   },
+   {
+    "repo": "matsim-libs",
+    "number": 5155,
+    "title": "build(deps): bump the bag-of-cats group across 1 directory with 2 updates",
+    "url": "https://github.com/matsim-org/matsim-libs/pull/5155",
+    "author": "dependabot[bot]",
+    "bot": true,
+    "labels": [
+     "dependencies",
+     "java"
+    ]
+   },
+   {
+    "repo": "matsim-libs",
+    "number": 5153,
+    "title": "fix(network): keep every change event when several share a start time",
+    "url": "https://github.com/matsim-org/matsim-libs/pull/5153",
+    "author": "langkoos",
+    "bot": false,
+    "labels": []
+   },
+   {
+    "repo": "matsim-libs",
+    "number": 5152,
+    "title": "maintenance(small-scale-traffic-generation): reduce public footprint; adjust naming of variables and methods; add comments and questions",
+    "url": "https://github.com/matsim-org/matsim-libs/pull/5152",
+    "author": "kainagel",
+    "bot": false,
+    "labels": []
+   },
+   {
+    "repo": "matsim-libs",
+    "number": 5150,
+    "title": "feat(dsim): Make IdleStrategy in Threadpool configurable",
+    "url": "https://github.com/matsim-org/matsim-libs/pull/5150",
+    "author": "Janekdererste",
+    "bot": false,
+    "labels": []
+   },
+   {
+    "repo": "matsim-libs",
+    "number": 5149,
+    "title": "build(deps): bump fory.version from 1.6.1 to 1.7.0",
+    "url": "https://github.com/matsim-org/matsim-libs/pull/5149",
+    "author": "dependabot[bot]",
+    "bot": true,
+    "labels": [
+     "dependencies",
+     "java"
+    ]
+   },
+   {
+    "repo": "matsim-libs",
+    "number": 5148,
+    "title": "build(deps): bump the bag-of-cats group across 1 directory with 6 updates",
+    "url": "https://github.com/matsim-org/matsim-libs/pull/5148",
+    "author": "dependabot[bot]",
+    "bot": true,
+    "labels": [
+     "dependencies",
+     "java"
+    ]
+   },
+   {
+    "repo": "matsim-libs",
+    "number": 5144,
+    "title": "build(deps): bump the github-actions group across 1 directory with 2 updates",
+    "url": "https://github.com/matsim-org/matsim-libs/pull/5144",
+    "author": "dependabot[bot]",
+    "bot": true,
+    "labels": [
+     "dependencies",
+     "github_actions"
+    ]
+   }
+  ],
+  "openedPRs": [
+   {
+    "repo": "alonso-mora",
+    "number": 101,
+    "title": "chore(deps-dev): bump org.mockito:mockito-junit-jupiter from 5.23.0 to 5.24.0",
+    "url": "https://github.com/matsim-org/alonso-mora/pull/101",
+    "author": "dependabot[bot]",
+    "bot": true,
+    "labels": [
+     "dependencies",
+     "java"
+    ]
+   },
+   {
+    "repo": "pt2matsim",
+    "number": 444,
+    "title": "fix: Handle directional reserved lanes and preserve PT-only lane capacity",
+    "url": "https://github.com/matsim-org/pt2matsim/pull/444",
+    "author": "balacmi",
+    "bot": false,
+    "labels": []
+   },
+   {
+    "repo": "alonso-mora",
+    "number": 100,
+    "title": "chore(deps): bump actions/setup-java from 5 to 6 in the github-actions group",
+    "url": "https://github.com/matsim-org/alonso-mora/pull/100",
+    "author": "dependabot[bot]",
+    "bot": true,
+    "labels": [
+     "dependencies",
+     "github_actions"
+    ]
+   },
+   {
+    "repo": "matsim-libs",
+    "number": 5168,
+    "title": "feat(bicycle): network tools for infra classification and elevation (OSM and SUMO paths)",
+    "url": "https://github.com/matsim-org/matsim-libs/pull/5168",
+    "author": "vizsim",
+    "bot": false,
+    "labels": []
+   }
+  ],
+  "openedIssues": [
+   {
+    "repo": "matsim-libs",
+    "number": 5187,
+    "title": "Running tests including DSim on VSCode / IntelliJ",
+    "url": "https://github.com/matsim-org/matsim-libs/issues/5187",
+    "author": "sebhoerl",
+    "bot": false,
+    "labels": []
+   },
+   {
+    "repo": "matsim-libs",
+    "number": 5172,
+    "title": "Full Integration is failing due to pseudosimulation",
+    "url": "https://github.com/matsim-org/matsim-libs/issues/5172",
+    "author": "Janekdererste",
+    "bot": false,
+    "labels": []
+   },
+   {
+    "repo": "vsp-internal",
+    "number": 10,
+    "title": "modify python srv reader to be able to read srv18 and srv23 (which are different)",
+    "url": "https://github.com/matsim-org/vsp-internal/issues/10",
+    "author": "paulheinr",
+    "bot": false,
+    "labels": []
+   },
+   {
+    "repo": "matsim-libs",
+    "number": 5154,
+    "title": "How to evaluate the impact of introducing DRT on overall mode share with replanning enabled",
+    "url": "https://github.com/matsim-org/matsim-libs/issues/5154",
+    "author": "Ilyasriaz948",
+    "bot": false,
+    "labels": []
+   }
+  ],
+  "closedIssuesCount": 2,
+  "activeRepos": [
+   {
+    "repo": "matsim-episim-libs",
+    "url": "https://github.com/matsim-org/matsim-episim-libs",
+    "description": "Epidemic simulation for MATSim",
+    "commits": 66,
+    "humanCommits": 66,
+    "authors": [
+     "jarosmirk",
+     "jakobrehmann"
+    ]
+   },
+   {
+    "repo": "website-11ty",
+    "url": "https://github.com/matsim-org/website-11ty",
+    "description": "MATSim Website, redesign of 2024, based on 11ty",
+    "commits": 15,
+    "humanCommits": 15,
+    "authors": [
+     "langkoos",
+     "ikaddoura",
+     "kt86"
+    ]
+   },
+   {
+    "repo": "matsim-libs",
+    "url": "https://github.com/matsim-org/matsim-libs",
+    "description": "Multi-Agent Transport Simulation",
+    "commits": 26,
+    "humanCommits": 14,
+    "authors": [
+     "rewertvsp",
+     "rakow",
+     "simei94",
+     "Janekdererste",
+     "kainagel",
+     "tthunig",
+     "nkuehnel",
+     "mfrawley-moia",
+     "langkoos"
+    ]
+   },
+   {
+    "repo": "pt2matsim",
+    "url": "https://github.com/matsim-org/pt2matsim",
+    "description": "Package to create a multi-modal MATSim network and schedule from public transit data (GTFS or HAFAS) and an OSM map of the area.",
+    "commits": 6,
+    "humanCommits": 2,
+    "authors": [
+     "jfbischoff"
+    ]
+   }
+  ],
+  "contributors": [
+   "ikaddoura",
+   "jakobrehmann",
+   "Janekdererste",
+   "jarosmirk",
+   "jfbischoff",
+   "kainagel",
+   "kt86",
+   "langkoos",
+   "mfrawley-moia",
+   "nkuehnel",
+   "rakow",
+   "rewertvsp",
+   "simei94",
+   "tthunig"
+  ]
+ }
+}

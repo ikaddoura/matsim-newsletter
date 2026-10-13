@@ -1,0 +1,74 @@
+<!doctype html><html lang="de"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Monatsrückblick September 2026 – MATSim Weekly</title><link rel="stylesheet" href="../style.css"></head><body>
+<header class="site"><div><a class="brand" href="../index.html">MATSim Weekly</a><span class="muted">Entwicklungen auf <a href="https://github.com/matsim-org">github.com/matsim-org</a></span></div></header>
+<main><nav class="pager"><span></span><span></span></nav>
+<article class="card">
+<h1>Monatsrückblick September 2026</h1>
+<div class="muted">01.09.2026 – 30.09.2026</div>
+<div class="stats"><div><b>18</b><span>PRs gemergt</span></div><div><b>0</b><span>Releases</span></div><div><b>4</b><span>neue Issues</span></div><div><b>2</b><span>Issues geschlossen</span></div><div><b>14</b><span>Contributors</span></div></div>
+<div class="summary"><h3>Das Wichtigste in Kürze</h3>
+<ul>
+<li>Im September gab es keine neuen Releases und keine neuen Repositories.</li>
+<li><strong>DSim</strong> (verteilte Simulation) wurde weiter ausgebaut: Performance-Verbesserungen, entkoppelte Serialisierung und konfigurierbare Threadpool-Strategie.</li>
+<li><strong>matsim-episim-libs</strong> war am aktivsten (66 Commits): Umstellung auf MATSim 2026 / Java 25 und eine pathogenunabhängige Konfiguration.</li>
+<li>Mehrere Bugfixes in matsim-libs: Dekongestions-Maut, Zeitvariante Netzwerk-Events, Sample-Labels.</li>
+<li><code>IOUtils</code> unterstützt jetzt ZIP, und das DRT-Rebalancing wurde beschleunigt.</li>
+<li>Offene Punkte: DSim-Tests in IDEs und fehlschlagende Full-Integration-Tests unter Windows (Pseudosimulation).</li>
+</ul>
+
+<h3>DSim</h3>
+<ul>
+<li>Performance und Usability: bessere METIS-Fehlerlogs, Lösung eines Problems mit parallelen Links und Schleifenlinks sowie Partitionierung vor der ersten Iteration (<a href="https://github.com/matsim-org/matsim-libs/pull/5189">#5189</a>).</li>
+<li>Die <code>fory</code>-Abhängigkeit wurde ins Distributed-Simulation-Modul verschoben, damit DSim ohne Zusatzabhängigkeiten als Drop-in-Ersatz für die <code>mobsim</code> nutzbar ist (<a href="https://github.com/matsim-org/matsim-libs/pull/5167">#5167</a>).</li>
+<li>Die <code>IdleStrategy</code> im Threadpool ist konfigurierbar (<a href="https://github.com/matsim-org/matsim-libs/pull/5150">#5150</a>), und <code>threadScheduling</code> heißt nun <code>taskScheduling</code> (<a href="https://github.com/matsim-org/matsim-libs/pull/5181">#5181</a>). Beides betrifft bestehende Konfigurationen.</li>
+<li>Die Änderung an der Idle-Strategie zielt auf die seit längerem instabilen DSim-Integrationstests.</li>
+</ul>
+
+<h3>Neue Features und Verbesserungen in matsim-libs</h3>
+<ul>
+<li><code>IOUtils</code> unterstützt ZIP als fünftes Einzeldatei-Kompressionsformat neben gzip, lz4, bz2 und zst (<a href="https://github.com/matsim-org/matsim-libs/pull/5163">#5163</a>).</li>
+<li>DRT: Performance-Tweaks für das Min-Cost-Flow-Rebalancing, inklusive maximaler Distanz für Relocations (<a href="https://github.com/matsim-org/matsim-libs/pull/5156">#5156</a>).</li>
+<li>Neue Überladung <code>decideOnCoordForActivity</code> ohne <code>Scenario</code> (<a href="https://github.com/matsim-org/matsim-libs/pull/5169">#5169</a>).</li>
+</ul>
+
+<h3>Bugfixes</h3>
+<ul>
+<li>Decongestion Pricing: Agenten zahlen nun nach Link-Eintrittszeit, passend zur Erfassung der Staudaten. Das korrigiert die Mautberechnung (<a href="https://github.com/matsim-org/matsim-libs/pull/5176">#5176</a>).</li>
+<li><code>TimeVariantLinkImpl</code> behält alle Change-Events, auch wenn mehrere dieselbe Startzeit haben. Zuvor wurde das erste verdrängt (<a href="https://github.com/matsim-org/matsim-libs/pull/5153">#5153</a>).</li>
+<li>Sample-Größen bei Downsampling werden korrekt benannt (<a href="https://github.com/matsim-org/matsim-libs/pull/5185">#5185</a>). Das Folgeproblem wurde über das neue <code>PopulationUtils.getSampleLabel</code> behoben (<a href="https://github.com/matsim-org/matsim-libs/pull/5193">#5193</a>).</li>
+<li>Pseudosimulation: Das Qualitätsskript zählt SpotBugs-Funde statt Zeilen (<a href="https://github.com/matsim-org/matsim-libs/pull/5158">#5158</a>).</li>
+</ul>
+
+<h3>Dokumentation und Aufräumarbeiten</h3>
+<ul>
+<li>Fehlerhafte Noise-Summationsmethoden wurden mit Kommentaren und Warnungen versehen (<a href="https://github.com/matsim-org/matsim-libs/pull/5178">#5178</a>).</li>
+<li>Small-scale-traffic-generation: kleinere öffentliche Oberfläche und bessere Benennung (<a href="https://github.com/matsim-org/matsim-libs/pull/5152">#5152</a>).</li>
+</ul>
+
+<h3>Episim</h3>
+<ul>
+<li>Upgrade auf MATSim 2026 und Java 25 (<a href="https://github.com/matsim-org/matsim-episim-libs/pull/124">#124</a>).</li>
+<li>Pathogenunabhängige Konfiguration: Pathogene, Übertragungswege, Antikörper und Infektionsepisoden ersetzen die bisherigen SARS-CoV-2-spezifischen Enums und Annahmen (<a href="https://github.com/matsim-org/matsim-episim-libs/pull/126">#126</a>).</li>
+<li>Immunität ist nun ein eigenes, pro Lauf konfigurierbares Modell, und Impfungen sind stammabhängig (<a href="https://github.com/matsim-org/matsim-episim-libs/pull/127">#127</a>).</li>
+<li>Neues Batch-Output-Packing für den covid-sim.info-Visualiser (<a href="https://github.com/matsim-org/matsim-episim-libs/pull/125">#125</a>).</li>
+</ul>
+
+<h3>Offen und in Diskussion</h3>
+<ul>
+<li>Neue PRs: pt2matsim zu gerichteten Reserved Lanes und PT-only-Kapazität (<a href="https://github.com/matsim-org/pt2matsim/pull/444">#444</a>) sowie Netzwerk-Tools für Fahrrad-Infrastruktur und Höhen (<a href="https://github.com/matsim-org/matsim-libs/pull/5168">#5168</a>).</li>
+<li>Issues: DSim-Tests lassen sich in VSCode und IntelliJ nicht ausführen (<a href="https://github.com/matsim-org/matsim-libs/issues/5187">#5187</a>). Die Full Integration scheitert unter Windows an der Pseudosimulation (<a href="https://github.com/matsim-org/matsim-libs/issues/5172">#5172</a>). Außerdem gibt es eine Nutzerfrage zur DRT-Wirkung auf den Modal Split (<a href="https://github.com/matsim-org/matsim-libs/issues/5154">#5154</a>).</li>
+</ul>
+
+<h3>Sonstiges</h3>
+<p>Zusätzlich wurden 16 Bot-PRs, vermutlich Dependency-Updates, gemergt. Die Website (<code>website-11ty</code>) war mit 15 Commits ebenfalls aktiv. Insgesamt trugen 14 Personen bei.</p></div>
+<section><h2>🗓️ Wochen in diesem Monat</h2><ul><li><a href="../weeks/2026-W36.html">KW 36/2026</a> <span class="muted">31.08.2026 – 06.09.2026</span></li><li><a href="../weeks/2026-W37.html">KW 37/2026</a> <span class="muted">07.09.2026 – 13.09.2026</span></li><li><a href="../weeks/2026-W38.html">KW 38/2026</a> <span class="muted">14.09.2026 – 20.09.2026</span></li><li><a href="../weeks/2026-W39.html">KW 39/2026</a> <span class="muted">21.09.2026 – 27.09.2026</span></li></ul></section>
+
+
+<section><h2>🔀 Gemergte Pull Requests</h2><h4>matsim-libs (14)</h4><ul><li><a href="https://github.com/matsim-org/matsim-libs/pull/5193">#5193</a> fix: Standardize sample percentage labels <span class="muted">– @rewertvsp</span></li><li><a href="https://github.com/matsim-org/matsim-libs/pull/5189">#5189</a> perf(dsim): Improve several modules for DSim <span class="muted">– @rakow</span></li><li><a href="https://github.com/matsim-org/matsim-libs/pull/5185">#5185</a> fix: correct population names for downsampled pop sizes <span class="muted">– @simei94</span></li><li><a href="https://github.com/matsim-org/matsim-libs/pull/5181">#5181</a> refactor(dsim): change `threadScheduling` to `taskScheduling` <span class="muted">– @Janekdererste</span></li><li><a href="https://github.com/matsim-org/matsim-libs/pull/5178">#5178</a> docs: add comments and warnings to faulty noise summation methods <span class="muted">– @kainagel</span></li><li><a href="https://github.com/matsim-org/matsim-libs/pull/5176">#5176</a> fix(decongestion pricing): Correct toll calculation  <span class="muted">– @tthunig</span></li><li><a href="https://github.com/matsim-org/matsim-libs/pull/5169">#5169</a> refactor(core): add decideOnCoordForActivity overload without Scenario <span class="muted">– @nkuehnel</span></li><li><a href="https://github.com/matsim-org/matsim-libs/pull/5167">#5167</a> refactor(dsim): decouple serialization and message type registry <span class="muted">– @Janekdererste</span></li><li><a href="https://github.com/matsim-org/matsim-libs/pull/5163">#5163</a> feat(core): support ZIP as a compression format in IOUtils <span class="muted">– @mfrawley-moia</span></li><li><a href="https://github.com/matsim-org/matsim-libs/pull/5158">#5158</a> fix(pseudosimulation): count SpotBugs findings, not lines that contain one <span class="muted">– @langkoos</span></li><li><a href="https://github.com/matsim-org/matsim-libs/pull/5156">#5156</a> perf(drt): performance tweaks for min cost flow rebalancing, including max distance cap for relocations <span class="muted">– @nkuehnel</span></li><li><a href="https://github.com/matsim-org/matsim-libs/pull/5153">#5153</a> fix(network): keep every change event when several share a start time <span class="muted">– @langkoos</span></li><li><a href="https://github.com/matsim-org/matsim-libs/pull/5152">#5152</a> maintenance(small-scale-traffic-generation): reduce public footprint; adjust naming of variables and methods; add comments and questions <span class="muted">– @kainagel</span></li><li><a href="https://github.com/matsim-org/matsim-libs/pull/5150">#5150</a> feat(dsim): Make IdleStrategy in Threadpool configurable <span class="muted">– @Janekdererste</span></li></ul><h4>matsim-episim-libs (4)</h4><ul><li><a href="https://github.com/matsim-org/matsim-episim-libs/pull/127">#127</a> Js/refactor vaccinations to make it strain dependent <span class="muted">– @jarosmirk</span></li><li><a href="https://github.com/matsim-org/matsim-episim-libs/pull/126">#126</a> Pathogen-agnostic configuration: pathogens, transmission routes, antibodies and infection episodes <span class="muted">– @jarosmirk</span></li><li><a href="https://github.com/matsim-org/matsim-episim-libs/pull/125">#125</a> Js/Add batch output packing for the covid-sim.info visualiser <span class="muted">– @jarosmirk</span></li><li><a href="https://github.com/matsim-org/matsim-episim-libs/pull/124">#124</a> JS/ Upgrade Episim to MATSim 2026 / Java 25 <span class="muted">– @jarosmirk</span></li></ul><p class="muted">Zusätzlich 16 automatische Dependency-/Bot-PRs.</p></section>
+<section><h2>📈 Aktivste Repositories</h2><ul><li><a href="https://github.com/matsim-org/matsim-episim-libs">matsim-episim-libs</a>: 66 Commits, 2 Autor:innen</li><li><a href="https://github.com/matsim-org/website-11ty">website-11ty</a>: 15 Commits, 3 Autor:innen</li><li><a href="https://github.com/matsim-org/matsim-libs">matsim-libs</a>: 14 Commits (+12 Bot), 9 Autor:innen</li><li><a href="https://github.com/matsim-org/pt2matsim">pt2matsim</a>: 2 Commits (+4 Bot), 1 Autor:innen</li></ul></section>
+<section><h2>🐞 Neue Issues</h2><ul><li><strong>matsim-libs</strong> <a href="https://github.com/matsim-org/matsim-libs/issues/5187">#5187</a> Running tests including DSim on VSCode / IntelliJ</li><li><strong>matsim-libs</strong> <a href="https://github.com/matsim-org/matsim-libs/issues/5172">#5172</a> Full Integration is failing due to pseudosimulation</li><li><strong>vsp-internal</strong> <a href="https://github.com/matsim-org/vsp-internal/issues/10">#10</a> modify python srv reader to be able to read srv18 and srv23 (which are different)</li><li><strong>matsim-libs</strong> <a href="https://github.com/matsim-org/matsim-libs/issues/5154">#5154</a> How to evaluate the impact of introducing DRT on overall mode share with replanning enabled</li></ul></section>
+<section><h2>👥 Contributors</h2><p><a href="https://github.com/ikaddoura">@ikaddoura</a>, <a href="https://github.com/jakobrehmann">@jakobrehmann</a>, <a href="https://github.com/Janekdererste">@Janekdererste</a>, <a href="https://github.com/jarosmirk">@jarosmirk</a>, <a href="https://github.com/jfbischoff">@jfbischoff</a>, <a href="https://github.com/kainagel">@kainagel</a>, <a href="https://github.com/kt86">@kt86</a>, <a href="https://github.com/langkoos">@langkoos</a>, <a href="https://github.com/mfrawley-moia">@mfrawley-moia</a>, <a href="https://github.com/nkuehnel">@nkuehnel</a>, <a href="https://github.com/rakow">@rakow</a>, <a href="https://github.com/rewertvsp">@rewertvsp</a>, <a href="https://github.com/simei94">@simei94</a>, <a href="https://github.com/tthunig">@tthunig</a></p></section>
+<p class="muted" style="font-size:13px;margin-top:28px">Erstellt am 13.10.2026 · Zusammenfassung: copilot · <a href="../data/months/2026-09.json">Rohdaten (JSON)</a></p>
+</article></main>
+<footer>Automatisch erstellt aus öffentlichen GitHub-Daten. KI-Zusammenfassungen können Fehler enthalten – Details in den verlinkten PRs.</footer>
+</body></html>

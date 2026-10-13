@@ -1,0 +1,127 @@
+{
+ "kind": "week",
+ "id": "2026-W39",
+ "org": "matsim-org",
+ "start": "2026-09-21T00:00:00.000Z",
+ "end": "2026-09-28T00:00:00.000Z",
+ "generatedAt": "2026-10-13T14:08:01.565Z",
+ "summaryBy": "copilot",
+ "summary": "<h3>Das Wichtigste in Kürze</h3>\n<ul>\n<li>Ruhige Woche: Es gab keine neuen Releases und keine neuen Repositories.</li>\n<li>Der Schwerpunkt lag auf DSim (verteilte Simulation) in <code>matsim-libs</code> mit Performance- und Usability-Verbesserungen.</li>\n<li>In <code>matsim-episim-libs</code> wurde die Immunitätsmodellierung grundlegend umgebaut und strain-abhängig gemacht.</li>\n<li>Neuer offener PR in <code>pt2matsim</code> zu gerichteten Sonderspuren (Reserved Lanes).</li>\n</ul>\n\n<h3>Neue Features und Performance</h3>\n<ul>\n<li><strong>DSim:</strong> <a href=\"https://github.com/matsim-org/matsim-libs/pull/5189\">PR #5189</a> bringt bessere METIS-Fehlermeldungen und behebt ein Problem mit parallelen Links und Loop-Links. Die Partitionierung erfolgt nun vor der ersten Iteration, wenn die Routen bereits berechnet sind. Der Volume Analyzer ist jetzt ebenfalls vollständig verteilt. Zudem wird der Node-Concurrent-Handler nur noch einmal zurückgesetzt.</li>\n<li><strong>Epidemiemodell:</strong> <a href=\"https://github.com/matsim-org/matsim-episim-libs/pull/127\">PR #127</a> macht Immunität zu einem eigenen, pro Run konfigurierbaren Modell. Bisher wurde sie an zwei unabhängigen Stellen berechnet: Die Anfälligkeit stammte aus Impfwirksamkeitskurven, der Krankheitsverlauf in den Snz- und Cologne-Szenarien aus Antikörperspiegeln. Die Impfungen sind nun strain-abhängig.</li>\n</ul>\n\n<h3>Refactoring und Bugfixes</h3>\n<ul>\n<li><a href=\"https://github.com/matsim-org/matsim-libs/pull/5181\">PR #5181</a> benennt in DSim <code>threadScheduling</code> in <code>taskScheduling</code> um. Wer die alte Bezeichnung nutzt, sollte sie anpassen.</li>\n<li><a href=\"https://github.com/matsim-org/matsim-libs/pull/5185\">PR #5185</a> korrigiert die Populationsnamen bei herunterskalierten Populationsgrößen.</li>\n</ul>\n\n<h3>Offene Themen</h3>\n<ul>\n<li><a href=\"https://github.com/matsim-org/pt2matsim/pull/444\">pt2matsim PR #444</a> (offen): behandelt gerichtete Reserved Lanes und erhält die Kapazität reiner ÖV-Spuren.</li>\n<li><a href=\"https://github.com/matsim-org/matsim-libs/issues/5187\">Issue #5187</a>: Beim Ausführen der Tests des <code>ev</code>-Contribs in VSCode oder IntelliJ tritt offenbar ein <code>NoClassDefFoundError</code> auf, seit DSim dort integriert ist.</li>\n</ul>\n\n<h3>Aktivität</h3>\n<p>Sechs Contributors waren aktiv. Die meisten Commits gab es in <code>matsim-episim-libs</code> (11) und <code>website-11ty</code> (10), gefolgt von <code>matsim-libs</code> (3) und <code>pt2matsim</code> (1). Bot-PRs gab es keine.</p>",
+ "data": {
+  "newRepos": [],
+  "releases": [],
+  "mergedPRs": [
+   {
+    "repo": "matsim-libs",
+    "number": 5189,
+    "title": "perf(dsim): Improve several modules for DSim",
+    "url": "https://github.com/matsim-org/matsim-libs/pull/5189",
+    "author": "rakow",
+    "bot": false,
+    "labels": []
+   },
+   {
+    "repo": "matsim-episim-libs",
+    "number": 127,
+    "title": "Js/refactor vaccinations to make it strain dependent",
+    "url": "https://github.com/matsim-org/matsim-episim-libs/pull/127",
+    "author": "jarosmirk",
+    "bot": false,
+    "labels": []
+   },
+   {
+    "repo": "matsim-libs",
+    "number": 5185,
+    "title": "fix: correct population names for downsampled pop sizes",
+    "url": "https://github.com/matsim-org/matsim-libs/pull/5185",
+    "author": "simei94",
+    "bot": false,
+    "labels": []
+   },
+   {
+    "repo": "matsim-libs",
+    "number": 5181,
+    "title": "refactor(dsim): change `threadScheduling` to `taskScheduling`",
+    "url": "https://github.com/matsim-org/matsim-libs/pull/5181",
+    "author": "Janekdererste",
+    "bot": false,
+    "labels": []
+   }
+  ],
+  "openedPRs": [
+   {
+    "repo": "pt2matsim",
+    "number": 444,
+    "title": "fix: Handle directional reserved lanes and preserve PT-only lane capacity",
+    "url": "https://github.com/matsim-org/pt2matsim/pull/444",
+    "author": "balacmi",
+    "bot": false,
+    "labels": []
+   }
+  ],
+  "openedIssues": [
+   {
+    "repo": "matsim-libs",
+    "number": 5187,
+    "title": "Running tests including DSim on VSCode / IntelliJ",
+    "url": "https://github.com/matsim-org/matsim-libs/issues/5187",
+    "author": "sebhoerl",
+    "bot": false,
+    "labels": []
+   }
+  ],
+  "closedIssuesCount": 0,
+  "activeRepos": [
+   {
+    "repo": "matsim-episim-libs",
+    "url": "https://github.com/matsim-org/matsim-episim-libs",
+    "description": "Epidemic simulation for MATSim",
+    "commits": 11,
+    "humanCommits": 11,
+    "authors": [
+     "jarosmirk"
+    ]
+   },
+   {
+    "repo": "website-11ty",
+    "url": "https://github.com/matsim-org/website-11ty",
+    "description": "MATSim Website, redesign of 2024, based on 11ty",
+    "commits": 10,
+    "humanCommits": 10,
+    "authors": [
+     "langkoos"
+    ]
+   },
+   {
+    "repo": "matsim-libs",
+    "url": "https://github.com/matsim-org/matsim-libs",
+    "description": "Multi-Agent Transport Simulation",
+    "commits": 3,
+    "humanCommits": 3,
+    "authors": [
+     "rakow",
+     "simei94",
+     "Janekdererste"
+    ]
+   },
+   {
+    "repo": "pt2matsim",
+    "url": "https://github.com/matsim-org/pt2matsim",
+    "description": "Package to create a multi-modal MATSim network and schedule from public transit data (GTFS or HAFAS) and an OSM map of the area.",
+    "commits": 1,
+    "humanCommits": 1,
+    "authors": [
+     "jfbischoff"
+    ]
+   }
+  ],
+  "contributors": [
+   "Janekdererste",
+   "jarosmirk",
+   "jfbischoff",
+   "langkoos",
+   "rakow",
+   "simei94"
+  ]
+ }
+}

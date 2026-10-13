@@ -1,0 +1,165 @@
+{
+ "kind": "week",
+ "id": "2026-W41",
+ "org": "matsim-org",
+ "start": "2026-10-05T00:00:00.000Z",
+ "end": "2026-10-12T00:00:00.000Z",
+ "generatedAt": "2026-10-13T14:08:47.253Z",
+ "summaryBy": "copilot",
+ "summary": "<h3>Das Wichtigste in Kürze</h3>\n<ul>\n<li>In KW 41 gab es keine neuen Releases, keine neuen Repositories und keine neuen Issues.</li>\n<li>DSim: Agenten, die nie ihre erste Aktivität verlassen (z.B. Stay-at-home), werden jetzt korrekt gescort. Außerdem wurde die Reihenfolge abfahrender Fahrzeuge korrigiert.</li>\n<li>Neue Erweiterung in <code>drt-extensions</code>: Remote-Operatoren, die eine autonome DRT-Flotte im Verhältnis 1:N überwachen.</li>\n<li>Das Scoring kommerzieller Aktivitäten nutzt nun Zeitkosten des Fahrzeugtyps.</li>\n<li>Außerdem: Influenza-Unterstützung in matsim-episim-libs und ein neuer offener PR in pt2matsim.</li>\n</ul>\n\n<h3>Bugfixes (DSim)</h3>\n<ul>\n<li><strong>Scoring ohne Events:</strong> Der <code>BackpackDataCollector</code> registrierte Agenten erst beim ersten <code>ActivityEndEvent</code>. Agenten, die ihre erste Aktivität nie beenden, wurden daher nicht gescort (siehe Issue #5199). Sie werden nun über das neue Interface <code>NotifyAgentInsertion</code> registriert. <a href=\"https://github.com/matsim-org/matsim-libs/pull/5206\">PR #5206</a></li>\n<li><strong>Abfahrtsreihenfolge:</strong> Ein Comparator führte faktisch zu einer Sortierung nach ID. Das verursachte laut Beschreibung stark verspätete ÖV-Fahrzeuge in Berlin-Läufen mit DSim. Der Comparator wurde korrigiert. <a href=\"https://github.com/matsim-org/matsim-libs/pull/5201\">PR #5201</a></li>\n</ul>\n\n<h3>Neue Features</h3>\n<ul>\n<li><strong>Remote-Operator-Extension für DRT:</strong> Das neue Paket <code>remoteoperations</code> in der <code>operations</code>-Extension von <code>drt-extensions</code> ergänzt die bestehende Driver-Shift-Infrastruktur. Die Schichten der Operatoren definieren eine aggregierte Überwachungskapazität, es gibt keine feste Zuordnung von Operator zu Fahrzeug. Damit lassen sich autonome Flotten mit Fernüberwachung modellieren. <a href=\"https://github.com/matsim-org/matsim-libs/pull/5170\">PR #5170</a></li>\n<li><strong>Kommerzielles Scoring:</strong> Der Grenznutzen von Ausführen und Warten wird aus dem Fahrzeugtyp des jeweiligen kommerziellen Agenten abgeleitet. Grenzaktivitäten werden nur noch gescort, wenn ihre Dauer vollständig definiert ist. <a href=\"https://github.com/matsim-org/matsim-libs/pull/5141\">PR #5141</a></li>\n<li><strong>Influenza in Episim:</strong> Unterstützung für Multi-Saison-Influenza-Szenarien mit mehreren Stämmen unter einem Erreger. Dazu kommen ein Infektiositätsprofil (<code>infectivityProfile</code>), Korrekturen beim Schreiben und Wiedereinlesen der Config sowie Batch-Output für Cluster. Bestehende Szenarien bleiben unverändert, solange das Profil nicht konfiguriert ist. <a href=\"https://github.com/matsim-org/matsim-episim-libs/pull/128\">PR #128</a></li>\n</ul>\n\n<h3>Infrastruktur und Doku</h3>\n<ul>\n<li>Die <code>CONTRIBUTING.md</code> enthält jetzt Richtlinien für plattformunabhängige Tests und Commit-Nachrichten. <a href=\"https://github.com/matsim-org/matsim-libs/pull/5203\">PR #5203</a></li>\n<li>Zeilenenden im Pseudosimulations-Test wurden korrigiert, damit der Windows-Build-Server nicht mehr fehlschlägt. <a href=\"https://github.com/matsim-org/matsim-libs/pull/5202\">PR #5202</a></li>\n<li>Ein Bot-PR (Dependency-Update) wurde gemergt.</li>\n</ul>\n\n<h3>Neu in Arbeit</h3>\n<ul>\n<li>pt2matsim: Ein neuer offener PR will GTFS-Haltezeiten erhalten und Stopp-Offsets an die Abfahrten angleichen. <a href=\"https://github.com/matsim-org/pt2matsim/pull/448\">PR #448</a></li>\n</ul>\n\n<h3>Aktivität</h3>\n<p>Am aktivsten war <code>website-11ty</code> mit 17 Commits, gefolgt von <code>matsim-libs</code> mit 7 und <code>matsim-episim-libs</code> mit 2. Insgesamt waren 9 Contributors beteiligt.</p>",
+ "data": {
+  "newRepos": [],
+  "releases": [],
+  "mergedPRs": [
+   {
+    "repo": "matsim-libs",
+    "number": 5206,
+    "title": "fix(DSim): Score agents that do not produce events",
+    "url": "https://github.com/matsim-org/matsim-libs/pull/5206",
+    "author": "Janekdererste",
+    "bot": false,
+    "labels": []
+   },
+   {
+    "repo": "matsim-episim-libs",
+    "number": 128,
+    "title": "Js/influenza support",
+    "url": "https://github.com/matsim-org/matsim-episim-libs/pull/128",
+    "author": "jarosmirk",
+    "bot": false,
+    "labels": []
+   },
+   {
+    "repo": "matsim-libs",
+    "number": 5203,
+    "title": "docs: Extend CONTRIBUTING.md with testing and commit guidelines",
+    "url": "https://github.com/matsim-org/matsim-libs/pull/5203",
+    "author": "jfbischoff",
+    "bot": false,
+    "labels": []
+   },
+   {
+    "repo": "matsim-libs",
+    "number": 5202,
+    "title": "fix: line endings in pseudosimulation test",
+    "url": "https://github.com/matsim-org/matsim-libs/pull/5202",
+    "author": "jfbischoff",
+    "bot": false,
+    "labels": []
+   },
+   {
+    "repo": "matsim-libs",
+    "number": 5201,
+    "title": "fix(dsim): ordering of departing vehicles was wrong",
+    "url": "https://github.com/matsim-org/matsim-libs/pull/5201",
+    "author": "d-roeder",
+    "bot": false,
+    "labels": []
+   },
+   {
+    "repo": "matsim-libs",
+    "number": 5195,
+    "title": "build(deps): bump org.apache.fory:fory-core from 1.7.3 to 1.7.6",
+    "url": "https://github.com/matsim-org/matsim-libs/pull/5195",
+    "author": "dependabot[bot]",
+    "bot": true,
+    "labels": [
+     "dependencies",
+     "java"
+    ]
+   },
+   {
+    "repo": "matsim-libs",
+    "number": 5170,
+    "title": "feat(drt-extensions): Remote operator extension",
+    "url": "https://github.com/matsim-org/matsim-libs/pull/5170",
+    "author": "nkuehnel",
+    "bot": false,
+    "labels": []
+   },
+   {
+    "repo": "matsim-libs",
+    "number": 5141,
+    "title": "feat(scoring): Use vehicle time costs for commercial activity scoring",
+    "url": "https://github.com/matsim-org/matsim-libs/pull/5141",
+    "author": "rewertvsp",
+    "bot": false,
+    "labels": []
+   }
+  ],
+  "openedPRs": [
+   {
+    "repo": "matsim-libs",
+    "number": 5207,
+    "title": "build(deps): bump the bag-of-cats group across 1 directory with 3 updates",
+    "url": "https://github.com/matsim-org/matsim-libs/pull/5207",
+    "author": "dependabot[bot]",
+    "bot": true,
+    "labels": [
+     "dependencies",
+     "java"
+    ]
+   },
+   {
+    "repo": "pt2matsim",
+    "number": 448,
+    "title": "fix: Preserve GTFS dwell times and align stop offsets with departures",
+    "url": "https://github.com/matsim-org/pt2matsim/pull/448",
+    "author": "balacmi",
+    "bot": false,
+    "labels": []
+   }
+  ],
+  "openedIssues": [],
+  "closedIssuesCount": 3,
+  "activeRepos": [
+   {
+    "repo": "website-11ty",
+    "url": "https://github.com/matsim-org/website-11ty",
+    "description": "MATSim Website, redesign of 2024, based on 11ty",
+    "commits": 17,
+    "humanCommits": 16,
+    "authors": [
+     "ikaddoura",
+     "langkoos",
+     "mrieser"
+    ]
+   },
+   {
+    "repo": "matsim-libs",
+    "url": "https://github.com/matsim-org/matsim-libs",
+    "description": "Multi-Agent Transport Simulation",
+    "commits": 7,
+    "humanCommits": 6,
+    "authors": [
+     "nkuehnel",
+     "Janekdererste",
+     "rewertvsp",
+     "jfbischoff",
+     "d-roeder"
+    ]
+   },
+   {
+    "repo": "matsim-episim-libs",
+    "url": "https://github.com/matsim-org/matsim-episim-libs",
+    "description": "Epidemic simulation for MATSim",
+    "commits": 2,
+    "humanCommits": 2,
+    "authors": [
+     "jarosmirk"
+    ]
+   }
+  ],
+  "contributors": [
+   "d-roeder",
+   "ikaddoura",
+   "Janekdererste",
+   "jarosmirk",
+   "jfbischoff",
+   "langkoos",
+   "mrieser",
+   "nkuehnel",
+   "rewertvsp"
+  ]
+ }
+}

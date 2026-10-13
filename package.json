@@ -1,17 +1,15 @@
 {
-  "name": "matsim-newsletter",
-  "version": "1.0.0",
-  "description": "Weekly e-mail newsletter summarizing activity in the github.com/matsim organization",
+  "name": "matsim-weekly",
+  "version": "2.0.0",
+  "description": "Static website with weekly and monthly summaries of activity in github.com/matsim-org",
   "type": "module",
   "private": true,
   "engines": {
     "node": ">=20"
   },
   "scripts": {
-    "start": "node src/newsletter.mjs",
-    "preview": "node src/newsletter.mjs --dry-run"
-  },
-  "dependencies": {
-    "nodemailer": "^6.9.16"
+    "week": "node src/site.mjs week",
+    "month": "node src/site.mjs month",
+    "rebuild": "node src/site.mjs rebuild"
   }
 }
