@@ -16,7 +16,6 @@ on:
 
 permissions:
   contents: read
-  models: read
 
 jobs:
   newsletter:
@@ -29,10 +28,14 @@ jobs:
           node-version: 22
           cache: npm
       - run: npm ci
+      - name: Install Copilot CLI
+        run: npm install -g @github/copilot
       - name: Build and send newsletter
         run: node src/newsletter.mjs
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          COPILOT_GITHUB_TOKEN: ${{ secrets.COPILOT_TOKEN }}
+          LLM_MODEL: ${{ vars.LLM_MODEL }}
           DAYS: ${{ inputs.days || '7' }}
           DRY_RUN: ${{ inputs.dry_run && 'true' || 'false' }}
           SMTP_HOST: ${{ secrets.SMTP_HOST }}
