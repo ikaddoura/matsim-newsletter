@@ -9,6 +9,10 @@ on:
       days:
         description: 'Number of days to cover'
         default: '7'
+      dry_run:
+        description: 'Only render preview artifact, do not send mail'
+        type: boolean
+        default: false
 
 permissions:
   contents: read
@@ -30,9 +34,16 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           DAYS: ${{ inputs.days || '7' }}
+          DRY_RUN: ${{ inputs.dry_run && 'true' || 'false' }}
           SMTP_HOST: ${{ secrets.SMTP_HOST }}
           SMTP_PORT: ${{ secrets.SMTP_PORT }}
           SMTP_USER: ${{ secrets.SMTP_USER }}
           SMTP_PASS: ${{ secrets.SMTP_PASS }}
           MAIL_FROM: ${{ secrets.MAIL_FROM }}
           MAIL_TO: ${{ secrets.MAIL_TO }}
+      - name: Upload preview
+        if: inputs.dry_run
+        uses: actions/upload-artifact@v4
+        with:
+          name: newsletter-preview
+          path: newsletter-preview.html
