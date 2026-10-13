@@ -1,0 +1,4 @@
+node_modules/
+newsletter-preview.html
+newsletter-data.json
+.env
