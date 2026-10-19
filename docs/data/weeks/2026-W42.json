@@ -1,0 +1,289 @@
+{
+ "kind": "week",
+ "id": "2026-W42",
+ "org": "matsim-org",
+ "start": "2026-10-12T00:00:00.000Z",
+ "end": "2026-10-19T00:00:00.000Z",
+ "generatedAt": "2026-10-19T10:31:13.480Z",
+ "summaryBy": null,
+ "summary": null,
+ "data": {
+  "newRepos": [],
+  "releases": [
+   {
+    "repo": "pt2matsim",
+    "name": "26.10",
+    "tag": "v26.10",
+    "url": "https://github.com/matsim-org/pt2matsim/releases/tag/v26.10",
+    "prerelease": false,
+    "published": "2026-10-14T11:28:37Z"
+   }
+  ],
+  "mergedPRs": [
+   {
+    "repo": "matsim-episim-libs",
+    "number": 129,
+    "title": "Js/snapshot fix and test",
+    "url": "https://github.com/matsim-org/matsim-episim-libs/pull/129",
+    "author": "jarosmirk",
+    "bot": false,
+    "labels": []
+   },
+   {
+    "repo": "matsim-libs",
+    "number": 5215,
+    "title": "build(deps): bump the bag-of-cats group across 1 directory with 16 updates",
+    "url": "https://github.com/matsim-org/matsim-libs/pull/5215",
+    "author": "dependabot[bot]",
+    "bot": true,
+    "labels": [
+     "dependencies",
+     "java"
+    ]
+   },
+   {
+    "repo": "pt2matsim",
+    "number": 454,
+    "title": "chore: update version to 26.10.1-SNAPSHOT in pom.xml",
+    "url": "https://github.com/matsim-org/pt2matsim/pull/454",
+    "author": "marecabo",
+    "bot": false,
+    "labels": []
+   },
+   {
+    "repo": "pt2matsim",
+    "number": 453,
+    "title": "Release 26.10",
+    "url": "https://github.com/matsim-org/pt2matsim/pull/453",
+    "author": "marecabo",
+    "bot": false,
+    "labels": []
+   },
+   {
+    "repo": "pt2matsim",
+    "number": 452,
+    "title": "Update matsim to 2027.0-2026w42",
+    "url": "https://github.com/matsim-org/pt2matsim/pull/452",
+    "author": "marecabo",
+    "bot": false,
+    "labels": [
+     "dependencies",
+     "java"
+    ]
+   },
+   {
+    "repo": "pt2matsim",
+    "number": 451,
+    "title": "Bump org.checkerframework:checker-qual from 4.3.0 to 4.3.1",
+    "url": "https://github.com/matsim-org/pt2matsim/pull/451",
+    "author": "dependabot[bot]",
+    "bot": true,
+    "labels": [
+     "dependencies",
+     "java"
+    ]
+   },
+   {
+    "repo": "pt2matsim",
+    "number": 450,
+    "title": "Bump commons-codec:commons-codec from 1.22.1 to 1.23.0",
+    "url": "https://github.com/matsim-org/pt2matsim/pull/450",
+    "author": "dependabot[bot]",
+    "bot": true,
+    "labels": [
+     "dependencies",
+     "java"
+    ]
+   },
+   {
+    "repo": "matsim-libs",
+    "number": 5212,
+    "title": "build(deps): bump github/codeql-action from 4.38.2 to 4.38.3 in the github-actions group",
+    "url": "https://github.com/matsim-org/matsim-libs/pull/5212",
+    "author": "dependabot[bot]",
+    "bot": true,
+    "labels": [
+     "dependencies",
+     "github_actions"
+    ]
+   },
+   {
+    "repo": "matsim-libs",
+    "number": 5211,
+    "title": "build(deps): bump org.apache.fory:fory-core from 1.7.6 to 1.7.7",
+    "url": "https://github.com/matsim-org/matsim-libs/pull/5211",
+    "author": "dependabot[bot]",
+    "bot": true,
+    "labels": [
+     "dependencies",
+     "java"
+    ]
+   },
+   {
+    "repo": "matsim-libs",
+    "number": 5210,
+    "title": "fix: remove hbefa automagic method",
+    "url": "https://github.com/matsim-org/matsim-libs/pull/5210",
+    "author": "simei94",
+    "bot": false,
+    "labels": []
+   },
+   {
+    "repo": "matsim-libs",
+    "number": 5209,
+    "title": "feat(dsim): useCapacityConstraints for raptor router available in DSim",
+    "url": "https://github.com/matsim-org/matsim-libs/pull/5209",
+    "author": "Janekdererste",
+    "bot": false,
+    "labels": []
+   },
+   {
+    "repo": "matsim-libs",
+    "number": 5208,
+    "title": "refactor(commercialGen): Small changes small scale commercial traffic gen",
+    "url": "https://github.com/matsim-org/matsim-libs/pull/5208",
+    "author": "rewertvsp",
+    "bot": false,
+    "labels": []
+   },
+   {
+    "repo": "pt2matsim",
+    "number": 448,
+    "title": "fix: Preserve GTFS dwell times and align stop offsets with departures",
+    "url": "https://github.com/matsim-org/pt2matsim/pull/448",
+    "author": "balacmi",
+    "bot": false,
+    "labels": []
+   },
+   {
+    "repo": "pt2matsim",
+    "number": 447,
+    "title": "Bump org.checkerframework:checker-qual from 4.2.3 to 4.3.0",
+    "url": "https://github.com/matsim-org/pt2matsim/pull/447",
+    "author": "dependabot[bot]",
+    "bot": true,
+    "labels": [
+     "dependencies",
+     "java"
+    ]
+   },
+   {
+    "repo": "pt2matsim",
+    "number": 446,
+    "title": "Bump com.google.guava:guava from 33.7.1-jre to 33.7.2-jre",
+    "url": "https://github.com/matsim-org/pt2matsim/pull/446",
+    "author": "dependabot[bot]",
+    "bot": true,
+    "labels": [
+     "dependencies",
+     "java"
+    ]
+   },
+   {
+    "repo": "pt2matsim",
+    "number": 444,
+    "title": "fix: Handle directional reserved lanes and preserve PT-only lane capacity",
+    "url": "https://github.com/matsim-org/pt2matsim/pull/444",
+    "author": "balacmi",
+    "bot": false,
+    "labels": []
+   }
+  ],
+  "openedPRs": [
+   {
+    "repo": "matsim-libs",
+    "number": 5216,
+    "title": "build(deps): bump the bag-of-cats group with 10 updates",
+    "url": "https://github.com/matsim-org/matsim-libs/pull/5216",
+    "author": "dependabot[bot]",
+    "bot": true,
+    "labels": [
+     "dependencies",
+     "java"
+    ]
+   },
+   {
+    "repo": "pt2matsim",
+    "number": 455,
+    "title": "Fix trip chaining at midnight causing negative travel times",
+    "url": "https://github.com/matsim-org/pt2matsim/pull/455",
+    "author": "davibicudo",
+    "bot": false,
+    "labels": []
+   },
+   {
+    "repo": "matsim-libs",
+    "number": 5214,
+    "title": "fix: reject chained departures that travel backwards in time",
+    "url": "https://github.com/matsim-org/matsim-libs/pull/5214",
+    "author": "davibicudo",
+    "bot": false,
+    "labels": []
+   }
+  ],
+  "openedIssues": [
+   {
+    "repo": "pt2matsim",
+    "number": 456,
+    "title": "TODO: Reduce verbosity",
+    "url": "https://github.com/matsim-org/pt2matsim/issues/456",
+    "author": "sebhoerl",
+    "bot": false,
+    "labels": []
+   },
+   {
+    "repo": "pt2matsim",
+    "number": 449,
+    "title": "Missing a proper handling on-demand mobility",
+    "url": "https://github.com/matsim-org/pt2matsim/issues/449",
+    "author": "tkchouaki",
+    "bot": false,
+    "labels": []
+   }
+  ],
+  "closedIssuesCount": 0,
+  "activeRepos": [
+   {
+    "repo": "pt2matsim",
+    "url": "https://github.com/matsim-org/pt2matsim",
+    "description": "Package to create a multi-modal MATSim network and schedule from public transit data (GTFS or HAFAS) and an OSM map of the area.",
+    "commits": 9,
+    "humanCommits": 5,
+    "authors": [
+     "marecabo",
+     "balacmi"
+    ]
+   },
+   {
+    "repo": "matsim-libs",
+    "url": "https://github.com/matsim-org/matsim-libs",
+    "description": "Multi-Agent Transport Simulation",
+    "commits": 6,
+    "humanCommits": 3,
+    "authors": [
+     "Janekdererste",
+     "simei94",
+     "rewertvsp"
+    ]
+   },
+   {
+    "repo": "matsim-episim-libs",
+    "url": "https://github.com/matsim-org/matsim-episim-libs",
+    "description": "Epidemic simulation for MATSim",
+    "commits": 2,
+    "humanCommits": 2,
+    "authors": [
+     "jarosmirk"
+    ]
+   }
+  ],
+  "contributors": [
+   "balacmi",
+   "Janekdererste",
+   "jarosmirk",
+   "marecabo",
+   "rewertvsp",
+   "simei94"
+  ]
+ }
+}
