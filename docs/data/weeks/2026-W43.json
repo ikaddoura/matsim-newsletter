@@ -1,0 +1,242 @@
+{
+ "kind": "week",
+ "id": "2026-W43",
+ "org": "matsim-org",
+ "start": "2026-10-19T00:00:00.000Z",
+ "end": "2026-10-26T00:00:00.000Z",
+ "generatedAt": "2026-10-26T10:46:25.765Z",
+ "summaryBy": null,
+ "summary": null,
+ "data": {
+  "newRepos": [],
+  "releases": [
+   {
+    "repo": "pt2matsim",
+    "name": "v26.11",
+    "tag": "v26.11",
+    "url": "https://github.com/matsim-org/pt2matsim/releases/tag/v26.11",
+    "prerelease": false,
+    "published": "2026-10-19T12:30:28Z"
+   }
+  ],
+  "mergedPRs": [
+   {
+    "repo": "pt2matsim",
+    "number": 461,
+    "title": "fix: reduce router verbosity",
+    "url": "https://github.com/matsim-org/pt2matsim/pull/461",
+    "author": "sebhoerl",
+    "bot": false,
+    "labels": []
+   },
+   {
+    "repo": "pt2matsim",
+    "number": 460,
+    "title": "Bump com.fasterxml.jackson:jackson-bom from 2.22.3 to 2.22.4",
+    "url": "https://github.com/matsim-org/pt2matsim/pull/460",
+    "author": "dependabot[bot]",
+    "bot": true,
+    "labels": [
+     "dependencies",
+     "java"
+    ]
+   },
+   {
+    "repo": "pt2matsim",
+    "number": 459,
+    "title": "feat: weekday selection",
+    "url": "https://github.com/matsim-org/pt2matsim/pull/459",
+    "author": "sebhoerl",
+    "bot": false,
+    "labels": []
+   },
+   {
+    "repo": "matsim-libs",
+    "number": 5222,
+    "title": "fix(core): do not rewrite \".xml\" in the output path when writing output_config_initial.xml",
+    "url": "https://github.com/matsim-org/matsim-libs/pull/5222",
+    "author": "samuelhoenle",
+    "bot": false,
+    "labels": []
+   },
+   {
+    "repo": "matsim-libs",
+    "number": 5220,
+    "title": "feat(core): configurable typical duration source, incl. per-person typical durations",
+    "url": "https://github.com/matsim-org/matsim-libs/pull/5220",
+    "author": "michaz",
+    "bot": false,
+    "labels": []
+   },
+   {
+    "repo": "pt2matsim",
+    "number": 458,
+    "title": "Bump org.geotools:gt-bom from 35.1 to 35.2",
+    "url": "https://github.com/matsim-org/pt2matsim/pull/458",
+    "author": "dependabot[bot]",
+    "bot": true,
+    "labels": [
+     "dependencies",
+     "java"
+    ]
+   },
+   {
+    "repo": "matsim-libs",
+    "number": 5218,
+    "title": "build(deps): bump github/codeql-action from 4.38.3 to 4.39.0 in the github-actions group",
+    "url": "https://github.com/matsim-org/matsim-libs/pull/5218",
+    "author": "dependabot[bot]",
+    "bot": true,
+    "labels": [
+     "dependencies",
+     "github_actions"
+    ]
+   },
+   {
+    "repo": "pt2matsim",
+    "number": 457,
+    "title": "update version number after release",
+    "url": "https://github.com/matsim-org/pt2matsim/pull/457",
+    "author": "ikaddoura",
+    "bot": false,
+    "labels": []
+   },
+   {
+    "repo": "matsim-libs",
+    "number": 5217,
+    "title": "fix(dsim): make the distributed mobsim reproducible",
+    "url": "https://github.com/matsim-org/matsim-libs/pull/5217",
+    "author": "d-roeder",
+    "bot": false,
+    "labels": []
+   },
+   {
+    "repo": "pt2matsim",
+    "number": 455,
+    "title": "Fix trip chaining at midnight causing negative travel times",
+    "url": "https://github.com/matsim-org/pt2matsim/pull/455",
+    "author": "davibicudo",
+    "bot": false,
+    "labels": []
+   },
+   {
+    "repo": "pt2matsim",
+    "number": 397,
+    "title": "feat: multi-day schedules from gtfs",
+    "url": "https://github.com/matsim-org/pt2matsim/pull/397",
+    "author": "sebhoerl",
+    "bot": false,
+    "labels": []
+   }
+  ],
+  "openedPRs": [
+   {
+    "repo": "matsim-libs",
+    "number": 5227,
+    "title": "build(deps): bump the bag-of-cats group across 1 directory with 15 updates",
+    "url": "https://github.com/matsim-org/matsim-libs/pull/5227",
+    "author": "dependabot[bot]",
+    "bot": true,
+    "labels": [
+     "dependencies",
+     "java"
+    ]
+   },
+   {
+    "repo": "matsim-libs",
+    "number": 5226,
+    "title": "fix(dmc): use tour-local index for modes in SubtourModeConstraint",
+    "url": "https://github.com/matsim-org/matsim-libs/pull/5226",
+    "author": "samuelhoenle",
+    "bot": false,
+    "labels": []
+   },
+   {
+    "repo": "matsim-libs",
+    "number": 5225,
+    "title": "fix(drt): subtract fare in MultiModalDrtLegEstimator utility",
+    "url": "https://github.com/matsim-org/matsim-libs/pull/5225",
+    "author": "samuelhoenle",
+    "bot": false,
+    "labels": []
+   },
+   {
+    "repo": "matsim-libs",
+    "number": 5224,
+    "title": "fix(vsp): MUSE computation with typical durations from the person",
+    "url": "https://github.com/matsim-org/matsim-libs/pull/5224",
+    "author": "michaz",
+    "bot": false,
+    "labels": []
+   },
+   {
+    "repo": "matsim-libs",
+    "number": 5221,
+    "title": "feat(parking): add ParkingSearchParameterizationModule",
+    "url": "https://github.com/matsim-org/matsim-libs/pull/5221",
+    "author": "paulheinr",
+    "bot": false,
+    "labels": []
+   },
+   {
+    "repo": "alonso-mora",
+    "number": 102,
+    "title": "chore(deps): bump actions/setup-java from 5 to 6 in the github-actions group",
+    "url": "https://github.com/matsim-org/alonso-mora/pull/102",
+    "author": "dependabot[bot]",
+    "bot": true,
+    "labels": [
+     "dependencies",
+     "github_actions"
+    ]
+   }
+  ],
+  "openedIssues": [],
+  "closedIssuesCount": 1,
+  "activeRepos": [
+   {
+    "repo": "pt2matsim",
+    "url": "https://github.com/matsim-org/pt2matsim",
+    "description": "Package to create a multi-modal MATSim network and schedule from public transit data (GTFS or HAFAS) and an OSM map of the area.",
+    "commits": 7,
+    "humanCommits": 5,
+    "authors": [
+     "sebhoerl",
+     "ikaddoura",
+     "davibicudo"
+    ]
+   },
+   {
+    "repo": "matsim-libs",
+    "url": "https://github.com/matsim-org/matsim-libs",
+    "description": "Multi-Agent Transport Simulation",
+    "commits": 4,
+    "humanCommits": 3,
+    "authors": [
+     "samuelhoenle",
+     "d-roeder",
+     "michaz"
+    ]
+   },
+   {
+    "repo": "website-11ty",
+    "url": "https://github.com/matsim-org/website-11ty",
+    "description": "MATSim Website, redesign of 2024, based on 11ty",
+    "commits": 1,
+    "humanCommits": 1,
+    "authors": [
+     "langkoos"
+    ]
+   }
+  ],
+  "contributors": [
+   "d-roeder",
+   "davibicudo",
+   "ikaddoura",
+   "langkoos",
+   "michaz",
+   "samuelhoenle",
+   "sebhoerl"
+  ]
+ }
+}
