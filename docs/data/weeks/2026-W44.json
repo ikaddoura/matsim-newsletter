@@ -1,0 +1,191 @@
+{
+ "kind": "week",
+ "id": "2026-W44",
+ "org": "matsim-org",
+ "start": "2026-10-26T00:00:00.000Z",
+ "end": "2026-11-02T00:00:00.000Z",
+ "generatedAt": "2026-11-02T13:07:16.445Z",
+ "summaryBy": null,
+ "summary": null,
+ "data": {
+  "newRepos": [],
+  "releases": [],
+  "mergedPRs": [
+   {
+    "repo": "matsim-libs",
+    "number": 5240,
+    "title": "fix(simwrapper): use output_vehicles file for PublicTransitAnalysis",
+    "url": "https://github.com/matsim-org/matsim-libs/pull/5240",
+    "author": "tschlenther",
+    "bot": false,
+    "labels": [
+     "bug"
+    ]
+   },
+   {
+    "repo": "matsim-libs",
+    "number": 5231,
+    "title": "fix(drt): adaptive prebooking logic never submitted bookings",
+    "url": "https://github.com/matsim-org/matsim-libs/pull/5231",
+    "author": "nkuehnel",
+    "bot": false,
+    "labels": []
+   },
+   {
+    "repo": "matsim-libs",
+    "number": 5229,
+    "title": "build(deps): bump github/codeql-action from 4.39.0 to 4.39.1 in the github-actions group across 1 directory",
+    "url": "https://github.com/matsim-org/matsim-libs/pull/5229",
+    "author": "dependabot[bot]",
+    "bot": true,
+    "labels": [
+     "dependencies",
+     "github_actions"
+    ]
+   },
+   {
+    "repo": "matsim-libs",
+    "number": 5228,
+    "title": "fix(drt): set pickup duration in AcceptedDrtRequest.createFromOriginalRequest",
+    "url": "https://github.com/matsim-org/matsim-libs/pull/5228",
+    "author": "nkuehnel",
+    "bot": false,
+    "labels": []
+   },
+   {
+    "repo": "matsim-libs",
+    "number": 5226,
+    "title": "fix(dmc): use tour-local index for modes in SubtourModeConstraint",
+    "url": "https://github.com/matsim-org/matsim-libs/pull/5226",
+    "author": "samuelhoenle",
+    "bot": false,
+    "labels": []
+   }
+  ],
+  "openedPRs": [
+   {
+    "repo": "matsim-libs",
+    "number": 5238,
+    "title": "build(deps): bump the bag-of-cats group across 1 directory with 23 updates",
+    "url": "https://github.com/matsim-org/matsim-libs/pull/5238",
+    "author": "dependabot[bot]",
+    "bot": true,
+    "labels": [
+     "dependencies",
+     "java"
+    ]
+   },
+   {
+    "repo": "matsim-libs",
+    "number": 5237,
+    "title": "feat(drt): evaluate stop candidates as request variants in the insertion search",
+    "url": "https://github.com/matsim-org/matsim-libs/pull/5237",
+    "author": "nkuehnel",
+    "bot": false,
+    "labels": []
+   },
+   {
+    "repo": "matsim-libs",
+    "number": 5235,
+    "title": "fix(ev): alignment of simulation time step - 1 second",
+    "url": "https://github.com/matsim-org/matsim-libs/pull/5235",
+    "author": "sebhoerl",
+    "bot": false,
+    "labels": []
+   },
+   {
+    "repo": "matsim-libs",
+    "number": 5233,
+    "title": "refactor(drt): evaluate insertions with the request carried by their waypoints",
+    "url": "https://github.com/matsim-org/matsim-libs/pull/5233",
+    "author": "nkuehnel",
+    "bot": false,
+    "labels": []
+   },
+   {
+    "repo": "pt2matsim",
+    "number": 463,
+    "title": "Bump org.apache.maven.plugins:maven-failsafe-plugin from 3.6.0 to 3.6.1",
+    "url": "https://github.com/matsim-org/pt2matsim/pull/463",
+    "author": "dependabot[bot]",
+    "bot": true,
+    "labels": [
+     "dependencies",
+     "java"
+    ]
+   },
+   {
+    "repo": "pt2matsim",
+    "number": 462,
+    "title": "Bump org.apache.maven.plugins:maven-surefire-plugin from 3.6.0 to 3.6.1",
+    "url": "https://github.com/matsim-org/pt2matsim/pull/462",
+    "author": "dependabot[bot]",
+    "bot": true,
+    "labels": [
+     "dependencies",
+     "java"
+    ]
+   }
+  ],
+  "openedIssues": [
+   {
+    "repo": "matsim-libs",
+    "number": 5239,
+    "title": "QSim (kinematicWaves): inflow capacity is not refilled while a link is inactive, so short links block vehicles until stuckTime",
+    "url": "https://github.com/matsim-org/matsim-libs/issues/5239",
+    "author": "vizsim",
+    "bot": false,
+    "labels": []
+   },
+   {
+    "repo": "matsim-libs",
+    "number": 5236,
+    "title": "SwissRailRaptor capacity constraints: departures that left nobody behind are treated as unavailable",
+    "url": "https://github.com/matsim-org/matsim-libs/issues/5236",
+    "author": "LasseBienzeisler",
+    "bot": false,
+    "labels": []
+   },
+   {
+    "repo": "matsim-libs",
+    "number": 5232,
+    "title": "Eliminate code duplication for DSim in ev contrib",
+    "url": "https://github.com/matsim-org/matsim-libs/issues/5232",
+    "author": "sebhoerl",
+    "bot": false,
+    "labels": []
+   }
+  ],
+  "closedIssuesCount": 0,
+  "activeRepos": [
+   {
+    "repo": "matsim-libs",
+    "url": "https://github.com/matsim-org/matsim-libs",
+    "description": "Multi-Agent Transport Simulation",
+    "commits": 5,
+    "humanCommits": 4,
+    "authors": [
+     "tschlenther",
+     "samuelhoenle",
+     "nkuehnel"
+    ]
+   },
+   {
+    "repo": "website-11ty",
+    "url": "https://github.com/matsim-org/website-11ty",
+    "description": "MATSim Website, redesign of 2024, based on 11ty",
+    "commits": 1,
+    "humanCommits": 1,
+    "authors": [
+     "luchengqi7"
+    ]
+   }
+  ],
+  "contributors": [
+   "luchengqi7",
+   "nkuehnel",
+   "samuelhoenle",
+   "tschlenther"
+  ]
+ }
+}
