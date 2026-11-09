@@ -1,0 +1,258 @@
+{
+ "kind": "week",
+ "id": "2026-W45",
+ "org": "matsim-org",
+ "start": "2026-11-02T00:00:00.000Z",
+ "end": "2026-11-09T00:00:00.000Z",
+ "generatedAt": "2026-11-09T13:37:34.273Z",
+ "summaryBy": null,
+ "summary": null,
+ "data": {
+  "newRepos": [],
+  "releases": [],
+  "mergedPRs": [
+   {
+    "repo": "matsim-libs",
+    "number": 5254,
+    "title": "docs(drt): correct the travel time and detour constraint documentation",
+    "url": "https://github.com/matsim-org/matsim-libs/pull/5254",
+    "author": "nkuehnel",
+    "bot": false,
+    "labels": []
+   },
+   {
+    "repo": "matsim-libs",
+    "number": 5253,
+    "title": "refactor(drt): remove deprecated PromisedPickupTimeWindowDrtOfferAcceptor",
+    "url": "https://github.com/matsim-org/matsim-libs/pull/5253",
+    "author": "nkuehnel",
+    "bot": false,
+    "labels": []
+   },
+   {
+    "repo": "matsim-libs",
+    "number": 5252,
+    "title": "refactor(freight/logistics): Some improvements of the test code",
+    "url": "https://github.com/matsim-org/matsim-libs/pull/5252",
+    "author": "kt86",
+    "bot": false,
+    "labels": []
+   },
+   {
+    "repo": "matsim-libs",
+    "number": 5251,
+    "title": "docs(freight/logistics): Improve Documentation",
+    "url": "https://github.com/matsim-org/matsim-libs/pull/5251",
+    "author": "kt86",
+    "bot": false,
+    "labels": []
+   },
+   {
+    "repo": "matsim-libs",
+    "number": 5250,
+    "title": "feat: vtts analysis",
+    "url": "https://github.com/matsim-org/matsim-libs/pull/5250",
+    "author": "GregorRyb",
+    "bot": false,
+    "labels": []
+   },
+   {
+    "repo": "matsim-libs",
+    "number": 5249,
+    "title": "fix(dsim): reject a storage capacity factor that differs from the flow capacity factor",
+    "url": "https://github.com/matsim-org/matsim-libs/pull/5249",
+    "author": "michaz",
+    "bot": false,
+    "labels": []
+   },
+   {
+    "repo": "matsim-libs",
+    "number": 5248,
+    "title": "fix(dsim): stuck vehicles and blocked buffers as in qsim",
+    "url": "https://github.com/matsim-org/matsim-libs/pull/5248",
+    "author": "michaz",
+    "bot": false,
+    "labels": []
+   },
+   {
+    "repo": "matsim-libs",
+    "number": 5247,
+    "title": "feat(drt): minimum trip distance constraint",
+    "url": "https://github.com/matsim-org/matsim-libs/pull/5247",
+    "author": "nkuehnel",
+    "bot": false,
+    "labels": []
+   },
+   {
+    "repo": "matsim-libs",
+    "number": 5246,
+    "title": "fix(readme): update code examples pointer",
+    "url": "https://github.com/matsim-org/matsim-libs/pull/5246",
+    "author": "rewertvsp",
+    "bot": false,
+    "labels": []
+   },
+   {
+    "repo": "matsim-libs",
+    "number": 5242,
+    "title": "fix(core): change Guice dependency to support newer java versions",
+    "url": "https://github.com/matsim-org/matsim-libs/pull/5242",
+    "author": "mrieser",
+    "bot": false,
+    "labels": []
+   },
+   {
+    "repo": "matsim-libs",
+    "number": 5241,
+    "title": "fix(core): fix some edge cases in NetworkCleaner with turn restrictions",
+    "url": "https://github.com/matsim-org/matsim-libs/pull/5241",
+    "author": "mrieser",
+    "bot": false,
+    "labels": []
+   },
+   {
+    "repo": "matsim-libs",
+    "number": 5233,
+    "title": "refactor(drt): evaluate insertions with the request carried by their waypoints",
+    "url": "https://github.com/matsim-org/matsim-libs/pull/5233",
+    "author": "nkuehnel",
+    "bot": false,
+    "labels": []
+   },
+   {
+    "repo": "matsim-libs",
+    "number": 5221,
+    "title": "feat(parking): add ParkingSearchParameterizationModule",
+    "url": "https://github.com/matsim-org/matsim-libs/pull/5221",
+    "author": "paulheinr",
+    "bot": false,
+    "labels": []
+   }
+  ],
+  "openedPRs": [
+   {
+    "repo": "matsim-libs",
+    "number": 5259,
+    "title": "fix(vtts): ask the run's scoring function for MUSE, money and travel",
+    "url": "https://github.com/matsim-org/matsim-libs/pull/5259",
+    "author": "michaz",
+    "bot": false,
+    "labels": []
+   },
+   {
+    "repo": "pt2matsim",
+    "number": 465,
+    "title": "Bump org.checkerframework:checker-qual from 4.3.1 to 4.4.0",
+    "url": "https://github.com/matsim-org/pt2matsim/pull/465",
+    "author": "dependabot[bot]",
+    "bot": true,
+    "labels": [
+     "dependencies",
+     "java"
+    ]
+   },
+   {
+    "repo": "matsim-libs",
+    "number": 5258,
+    "title": "build(deps): bump the bag-of-cats group across 1 directory with 28 updates",
+    "url": "https://github.com/matsim-org/matsim-libs/pull/5258",
+    "author": "dependabot[bot]",
+    "bot": true,
+    "labels": [
+     "dependencies",
+     "java"
+    ]
+   },
+   {
+    "repo": "matsim-libs",
+    "number": 5257,
+    "title": "build(deps): bump github/codeql-action from 4.39.1 to 4.39.2 in the github-actions group",
+    "url": "https://github.com/matsim-org/matsim-libs/pull/5257",
+    "author": "dependabot[bot]",
+    "bot": true,
+    "labels": [
+     "dependencies",
+     "github_actions"
+    ]
+   },
+   {
+    "repo": "matsim-libs",
+    "number": 5256,
+    "title": "fix(drt): identify passenger groups on the booked leg for prebooking",
+    "url": "https://github.com/matsim-org/matsim-libs/pull/5256",
+    "author": "nkuehnel",
+    "bot": false,
+    "labels": []
+   },
+   {
+    "repo": "matsim-libs",
+    "number": 5255,
+    "title": "fix(drt): ride duration and negative slack handling in computeSlackTimes",
+    "url": "https://github.com/matsim-org/matsim-libs/pull/5255",
+    "author": "nkuehnel",
+    "bot": false,
+    "labels": []
+   },
+   {
+    "repo": "matsim-libs",
+    "number": 5245,
+    "title": "  feat(analysis): add impact analysis and default SimWrapper dashboard",
+    "url": "https://github.com/matsim-org/matsim-libs/pull/5245",
+    "author": "mkreuschner",
+    "bot": false,
+    "labels": []
+   },
+   {
+    "repo": "pt2matsim",
+    "number": 464,
+    "title": "Bump org.apache.maven.plugins:maven-enforcer-plugin from 3.6.3 to 3.7.0",
+    "url": "https://github.com/matsim-org/pt2matsim/pull/464",
+    "author": "dependabot[bot]",
+    "bot": true,
+    "labels": [
+     "dependencies",
+     "java"
+    ]
+   }
+  ],
+  "openedIssues": [],
+  "closedIssuesCount": 0,
+  "activeRepos": [
+   {
+    "repo": "matsim-libs",
+    "url": "https://github.com/matsim-org/matsim-libs",
+    "description": "Multi-Agent Transport Simulation",
+    "commits": 13,
+    "humanCommits": 13,
+    "authors": [
+     "GregorRyb",
+     "nkuehnel",
+     "michaz",
+     "kt86",
+     "paulheinr",
+     "rewertvsp",
+     "mrieser"
+    ]
+   },
+   {
+    "repo": "website-11ty",
+    "url": "https://github.com/matsim-org/website-11ty",
+    "description": "MATSim Website, redesign of 2024, based on 11ty",
+    "commits": 1,
+    "humanCommits": 1,
+    "authors": [
+     "rewertvsp"
+    ]
+   }
+  ],
+  "contributors": [
+   "GregorRyb",
+   "kt86",
+   "michaz",
+   "mrieser",
+   "nkuehnel",
+   "paulheinr",
+   "rewertvsp"
+  ]
+ }
+}
