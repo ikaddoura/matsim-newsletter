@@ -1,0 +1,153 @@
+{
+ "kind": "week",
+ "id": "2026-W46",
+ "org": "matsim-org",
+ "start": "2026-11-09T00:00:00.000Z",
+ "end": "2026-11-16T00:00:00.000Z",
+ "generatedAt": "2026-11-16T13:22:09.918Z",
+ "summaryBy": null,
+ "summary": null,
+ "data": {
+  "newRepos": [],
+  "releases": [],
+  "mergedPRs": [
+   {
+    "repo": "matsim-libs",
+    "number": 5269,
+    "title": "fix(drt): wait until the earliest start before a pickup at the end of the current drive",
+    "url": "https://github.com/matsim-org/matsim-libs/pull/5269",
+    "author": "nkuehnel",
+    "bot": false,
+    "labels": []
+   },
+   {
+    "repo": "matsim-schemas",
+    "number": 1,
+    "title": "Take over the protos of matsim-rust in package matsim.io.types",
+    "url": "https://github.com/matsim-org/matsim-schemas/pull/1",
+    "author": "paulheinr",
+    "bot": false,
+    "labels": [
+     "schema-breaking-approved"
+    ]
+   },
+   {
+    "repo": "matsim-libs",
+    "number": 5261,
+    "title": "feat(drt): add optional pickupDropoffRestriction to require pickup and/or dropoff inside an area",
+    "url": "https://github.com/matsim-org/matsim-libs/pull/5261",
+    "author": "ikaddoura",
+    "bot": false,
+    "labels": []
+   },
+   {
+    "repo": "matsim-libs",
+    "number": 5260,
+    "title": "feat(application): command to write trips and legs CSV from the output of a finished run",
+    "url": "https://github.com/matsim-org/matsim-libs/pull/5260",
+    "author": "paulheinr",
+    "bot": false,
+    "labels": []
+   },
+   {
+    "repo": "matsim-libs",
+    "number": 5256,
+    "title": "fix(drt): identify passenger groups on the booked leg for prebooking",
+    "url": "https://github.com/matsim-org/matsim-libs/pull/5256",
+    "author": "nkuehnel",
+    "bot": false,
+    "labels": []
+   },
+   {
+    "repo": "matsim-libs",
+    "number": 5255,
+    "title": "fix(drt): ride duration and negative slack handling in computeSlackTimes",
+    "url": "https://github.com/matsim-org/matsim-libs/pull/5255",
+    "author": "nkuehnel",
+    "bot": false,
+    "labels": []
+   },
+   {
+    "repo": "matsim-libs",
+    "number": 5237,
+    "title": "feat(drt): evaluate stop candidates as request variants in the insertion search",
+    "url": "https://github.com/matsim-org/matsim-libs/pull/5237",
+    "author": "nkuehnel",
+    "bot": false,
+    "labels": []
+   }
+  ],
+  "openedPRs": [
+   {
+    "repo": "matsim-libs",
+    "number": 5268,
+    "title": "fix(drt): use a prebooked request submitted in the departure time step",
+    "url": "https://github.com/matsim-org/matsim-libs/pull/5268",
+    "author": "nkuehnel",
+    "bot": false,
+    "labels": []
+   },
+   {
+    "repo": "matsim-libs",
+    "number": 5267,
+    "title": "fix(withinday): count trips in progress in WithinDayTravelTime",
+    "url": "https://github.com/matsim-org/matsim-libs/pull/5267",
+    "author": "mfrawley-moia",
+    "bot": false,
+    "labels": []
+   },
+   {
+    "repo": "matsim-libs",
+    "number": 5266,
+    "title": "build(deps): bump the bag-of-cats group across 1 directory with 33 updates",
+    "url": "https://github.com/matsim-org/matsim-libs/pull/5266",
+    "author": "dependabot[bot]",
+    "bot": true,
+    "labels": [
+     "dependencies",
+     "java"
+    ]
+   },
+   {
+    "repo": "matsim-libs",
+    "number": 5264,
+    "title": "feat(drt): choose among stop candidates for prebooked requests",
+    "url": "https://github.com/matsim-org/matsim-libs/pull/5264",
+    "author": "nkuehnel",
+    "bot": false,
+    "labels": []
+   }
+  ],
+  "openedIssues": [],
+  "closedIssuesCount": 1,
+  "activeRepos": [
+   {
+    "repo": "matsim-libs",
+    "url": "https://github.com/matsim-org/matsim-libs",
+    "description": "Multi-Agent Transport Simulation",
+    "commits": 6,
+    "humanCommits": 6,
+    "authors": [
+     "nkuehnel",
+     "ikaddoura",
+     "paulheinr"
+    ]
+   },
+   {
+    "repo": "matsim-schemas",
+    "url": "https://github.com/matsim-org/matsim-schemas",
+    "description": "",
+    "commits": 4,
+    "humanCommits": 4,
+    "authors": [
+     "paulheinr"
+    ]
+   }
+  ],
+  "contributors": [
+   "ikaddoura",
+   "nkuehnel",
+   "paulheinr"
+  ]
+ }
+}
