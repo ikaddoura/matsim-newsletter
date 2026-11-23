@@ -1,0 +1,429 @@
+{
+ "kind": "week",
+ "id": "2026-W47",
+ "org": "matsim-org",
+ "start": "2026-11-16T00:00:00.000Z",
+ "end": "2026-11-23T00:00:00.000Z",
+ "generatedAt": "2026-11-23T15:41:18.058Z",
+ "summaryBy": null,
+ "summary": null,
+ "data": {
+  "newRepos": [],
+  "releases": [
+   {
+    "repo": "matsim-schemas",
+    "name": "v0.3.0",
+    "tag": "v0.3.0",
+    "url": "https://github.com/matsim-org/matsim-schemas/releases/tag/v0.3.0",
+    "prerelease": false,
+    "published": "2026-11-17T15:46:01Z"
+   },
+   {
+    "repo": "matsim-schemas",
+    "name": "v0.2.0",
+    "tag": "v0.2.0",
+    "url": "https://github.com/matsim-org/matsim-schemas/releases/tag/v0.2.0",
+    "prerelease": false,
+    "published": "2026-11-17T15:45:59Z"
+   }
+  ],
+  "mergedPRs": [
+   {
+    "repo": "matsim-libs",
+    "number": 5305,
+    "title": "fix(core): GeoFileReader did not recognize files with upper-case file-endings",
+    "url": "https://github.com/matsim-org/matsim-libs/pull/5305",
+    "author": "mrieser",
+    "bot": false,
+    "labels": []
+   },
+   {
+    "repo": "matsim-libs",
+    "number": 5304,
+    "title": "fix: Test Failures on Windows.",
+    "url": "https://github.com/matsim-org/matsim-libs/pull/5304",
+    "author": "jfbischoff",
+    "bot": false,
+    "labels": []
+   },
+   {
+    "repo": "pt2matsim",
+    "number": 467,
+    "title": "Opt-in extension of rail platform stop links along the track",
+    "url": "https://github.com/matsim-org/pt2matsim/pull/467",
+    "author": "ikaddoura",
+    "bot": false,
+    "labels": []
+   },
+   {
+    "repo": "matsim-libs",
+    "number": 5302,
+    "title": "fix: fix tests on windows",
+    "url": "https://github.com/matsim-org/matsim-libs/pull/5302",
+    "author": "jfbischoff",
+    "bot": false,
+    "labels": []
+   },
+   {
+    "repo": "pt2matsim",
+    "number": 466,
+    "title": "Opt-in rail platform-aware stop mapping",
+    "url": "https://github.com/matsim-org/pt2matsim/pull/466",
+    "author": "ikaddoura",
+    "bot": false,
+    "labels": []
+   },
+   {
+    "repo": "matsim-libs",
+    "number": 5300,
+    "title": "fix(osm): give the bike-reverse link its own callback and geometry",
+    "url": "https://github.com/matsim-org/matsim-libs/pull/5300",
+    "author": "vizsim",
+    "bot": false,
+    "labels": []
+   },
+   {
+    "repo": "matsim-libs",
+    "number": 5294,
+    "title": "fix(core): log LOG_LEVEL debug hint only once",
+    "url": "https://github.com/matsim-org/matsim-libs/pull/5294",
+    "author": "mfrawley-moia",
+    "bot": false,
+    "labels": []
+   },
+   {
+    "repo": "matsim-libs",
+    "number": 5292,
+    "title": "fix(common): reservation overlap with shared end time, count reservations by peak occupancy",
+    "url": "https://github.com/matsim-org/matsim-libs/pull/5292",
+    "author": "nkuehnel",
+    "bot": false,
+    "labels": []
+   },
+   {
+    "repo": "matsim-libs",
+    "number": 5291,
+    "title": "fix(drt-extensions): reuse vehicles of ending shifts for follow-up shifts",
+    "url": "https://github.com/matsim-org/matsim-libs/pull/5291",
+    "author": "nkuehnel",
+    "bot": false,
+    "labels": []
+   },
+   {
+    "repo": "matsim-schemas",
+    "number": 4,
+    "title": "Release workflow: also create the GitHub release of the tag",
+    "url": "https://github.com/matsim-org/matsim-schemas/pull/4",
+    "author": "paulheinr",
+    "bot": false,
+    "labels": []
+   },
+   {
+    "repo": "matsim-schemas",
+    "number": 3,
+    "title": "Add the routing service API v1 with generated gRPC stubs",
+    "url": "https://github.com/matsim-org/matsim-schemas/pull/3",
+    "author": "paulheinr",
+    "bot": false,
+    "labels": []
+   },
+   {
+    "repo": "matsim-libs",
+    "number": 5280,
+    "title": "fix(drt-extensions): shorten the wait-for-shift reservation when a follow up shift is assigned",
+    "url": "https://github.com/matsim-org/matsim-libs/pull/5280",
+    "author": "nkuehnel",
+    "bot": false,
+    "labels": []
+   },
+   {
+    "repo": "matsim-libs",
+    "number": 5279,
+    "title": "fix(drt-extensions): check shift end facilities until the vehicle's service end",
+    "url": "https://github.com/matsim-org/matsim-libs/pull/5279",
+    "author": "nkuehnel",
+    "bot": false,
+    "labels": []
+   },
+   {
+    "repo": "matsim-libs",
+    "number": 5273,
+    "title": "fix(railsim): keep the tail's overshoot at link boundaries",
+    "url": "https://github.com/matsim-org/matsim-libs/pull/5273",
+    "author": "NicDul",
+    "bot": false,
+    "labels": []
+   },
+   {
+    "repo": "matsim-schemas",
+    "number": 2,
+    "title": "Publish the Java bindings to repo.matsim.org on release tags",
+    "url": "https://github.com/matsim-org/matsim-schemas/pull/2",
+    "author": "paulheinr",
+    "bot": false,
+    "labels": []
+   },
+   {
+    "repo": "matsim-libs",
+    "number": 5235,
+    "title": "fix(ev): alignment of simulation time step - 1 second",
+    "url": "https://github.com/matsim-org/matsim-libs/pull/5235",
+    "author": "sebhoerl",
+    "bot": false,
+    "labels": []
+   }
+  ],
+  "openedPRs": [
+   {
+    "repo": "matsim-libs",
+    "number": 5303,
+    "title": "ci: use pull_request for PR title checks",
+    "url": "https://github.com/matsim-org/matsim-libs/pull/5303",
+    "author": "paulheinr",
+    "bot": false,
+    "labels": []
+   },
+   {
+    "repo": "matsim-libs",
+    "number": 5301,
+    "title": "feat(sumo): opt-in conversion of footway, pedestrian and track edges",
+    "url": "https://github.com/matsim-org/matsim-libs/pull/5301",
+    "author": "vizsim",
+    "bot": false,
+    "labels": []
+   },
+   {
+    "repo": "matsim-libs",
+    "number": 5298,
+    "title": "build(deps): bump the bag-of-cats group across 1 directory with 35 updates",
+    "url": "https://github.com/matsim-org/matsim-libs/pull/5298",
+    "author": "dependabot[bot]",
+    "bot": true,
+    "labels": [
+     "dependencies",
+     "java"
+    ]
+   },
+   {
+    "repo": "matsim-libs",
+    "number": 5296,
+    "title": "chore(ci): prime Maven cache, reuse to avoid maven Central throttling",
+    "url": "https://github.com/matsim-org/matsim-libs/pull/5296",
+    "author": "mfrawley-moia",
+    "bot": false,
+    "labels": []
+   },
+   {
+    "repo": "matsim-libs",
+    "number": 5278,
+    "title": "perf(railsim): stop the tail link search at the nearest occurrence",
+    "url": "https://github.com/matsim-org/matsim-libs/pull/5278",
+    "author": "NicDul",
+    "bot": false,
+    "labels": []
+   },
+   {
+    "repo": "matsim-libs",
+    "number": 5277,
+    "title": "fix(railsim): emit vehicle and person leave events at the end of a leg",
+    "url": "https://github.com/matsim-org/matsim-libs/pull/5277",
+    "author": "NicDul",
+    "bot": false,
+    "labels": []
+   },
+   {
+    "repo": "matsim-libs",
+    "number": 5276,
+    "title": "fix(railsim): do not stop at the end of the reserved window",
+    "url": "https://github.com/matsim-org/matsim-libs/pull/5276",
+    "author": "NicDul",
+    "bot": false,
+    "labels": []
+   },
+   {
+    "repo": "matsim-libs",
+    "number": 5275,
+    "title": "fix(railsim): time the link change of a decelerating train by kinematics",
+    "url": "https://github.com/matsim-org/matsim-libs/pull/5275",
+    "author": "NicDul",
+    "bot": false,
+    "labels": []
+   },
+   {
+    "repo": "matsim-libs",
+    "number": 5274,
+    "title": "fix(railsim): clamp the approved distance of a train to zero",
+    "url": "https://github.com/matsim-org/matsim-libs/pull/5274",
+    "author": "NicDul",
+    "bot": false,
+    "labels": []
+   },
+   {
+    "repo": "matsim-libs",
+    "number": 5272,
+    "title": "fix(railsim): release arrival reservations at a reversal and never reverse onto unheld track",
+    "url": "https://github.com/matsim-org/matsim-libs/pull/5272",
+    "author": "NicDul",
+    "bot": false,
+    "labels": []
+   },
+   {
+    "repo": "matsim-libs",
+    "number": 5270,
+    "title": "build(deps): bump org.apache.fory:fory-core from 1.7.7 to 1.7.8",
+    "url": "https://github.com/matsim-org/matsim-libs/pull/5270",
+    "author": "dependabot[bot]",
+    "bot": true,
+    "labels": [
+     "dependencies",
+     "java"
+    ]
+   }
+  ],
+  "openedIssues": [
+   {
+    "repo": "matsim-libs",
+    "number": 5299,
+    "title": "Simplify stuck agent analysis",
+    "url": "https://github.com/matsim-org/matsim-libs/issues/5299",
+    "author": "tschlenther",
+    "bot": false,
+    "labels": [
+     "enhancement",
+     "decision item"
+    ]
+   },
+   {
+    "repo": "matsim-libs",
+    "number": 5290,
+    "title": "railsim: after a reversal the approved distance reaches up to a train length beyond the reserved track",
+    "url": "https://github.com/matsim-org/matsim-libs/issues/5290",
+    "author": "NicDul",
+    "bot": false,
+    "labels": []
+   },
+   {
+    "repo": "matsim-libs",
+    "number": 5289,
+    "title": "railsim: the engine scans the whole remaining route at every update (tail link search and distance to the next stop)",
+    "url": "https://github.com/matsim-org/matsim-libs/issues/5289",
+    "author": "NicDul",
+    "bot": false,
+    "labels": []
+   },
+   {
+    "repo": "matsim-libs",
+    "number": 5288,
+    "title": "railsim: no vehicle and person leave events at the end of a leg",
+    "url": "https://github.com/matsim-org/matsim-libs/issues/5288",
+    "author": "NicDul",
+    "bot": false,
+    "labels": []
+   },
+   {
+    "repo": "matsim-libs",
+    "number": 5287,
+    "title": "railsim: trains brake for a stop at the end of the reserved window that never exists",
+    "url": "https://github.com/matsim-org/matsim-libs/issues/5287",
+    "author": "NicDul",
+    "bot": false,
+    "labels": []
+   },
+   {
+    "repo": "matsim-libs",
+    "number": 5286,
+    "title": "railsim: a train jumps forward onto the next link when it decelerates to a positive target speed",
+    "url": "https://github.com/matsim-org/matsim-libs/issues/5286",
+    "author": "NicDul",
+    "bot": false,
+    "labels": []
+   },
+   {
+    "repo": "matsim-libs",
+    "number": 5285,
+    "title": "railsim: a negative approved distance produces a NaN target speed, after which the train drives backwards",
+    "url": "https://github.com/matsim-org/matsim-libs/issues/5285",
+    "author": "NicDul",
+    "bot": false,
+    "labels": []
+   },
+   {
+    "repo": "matsim-libs",
+    "number": 5284,
+    "title": "railsim: the tail loses its overshoot at a link boundary, so the recorded body and the speed cap drift behind the train",
+    "url": "https://github.com/matsim-org/matsim-libs/issues/5284",
+    "author": "NicDul",
+    "bot": false,
+    "labels": []
+   },
+   {
+    "repo": "matsim-libs",
+    "number": 5283,
+    "title": "railsim: a reversal rebuilds the train body onto track the train does not hold",
+    "url": "https://github.com/matsim-org/matsim-libs/issues/5283",
+    "author": "NicDul",
+    "bot": false,
+    "labels": []
+   },
+   {
+    "repo": "matsim-libs",
+    "number": 5282,
+    "title": "railsim: a train reversing on a platform track shorter than itself never releases the reservations of its arrival body",
+    "url": "https://github.com/matsim-org/matsim-libs/issues/5282",
+    "author": "NicDul",
+    "bot": false,
+    "labels": []
+   }
+  ],
+  "closedIssuesCount": 1,
+  "activeRepos": [
+   {
+    "repo": "matsim-libs",
+    "url": "https://github.com/matsim-org/matsim-libs",
+    "description": "Multi-Agent Transport Simulation",
+    "commits": 11,
+    "humanCommits": 11,
+    "authors": [
+     "mrieser",
+     "jfbischoff",
+     "nkuehnel",
+     "vizsim",
+     "sebhoerl",
+     "mfrawley-moia",
+     "NicDul"
+    ]
+   },
+   {
+    "repo": "matsim-schemas",
+    "url": "https://github.com/matsim-org/matsim-schemas",
+    "description": "",
+    "commits": 5,
+    "humanCommits": 5,
+    "authors": [
+     "paulheinr"
+    ]
+   },
+   {
+    "repo": "pt2matsim",
+    "url": "https://github.com/matsim-org/pt2matsim",
+    "description": "Package to create a multi-modal MATSim network and schedule from public transit data (GTFS or HAFAS) and an OSM map of the area.",
+    "commits": 2,
+    "humanCommits": 2,
+    "authors": [
+     "ikaddoura"
+    ]
+   }
+  ],
+  "contributors": [
+   "ikaddoura",
+   "jfbischoff",
+   "mfrawley-moia",
+   "mrieser",
+   "NicDul",
+   "nkuehnel",
+   "paulheinr",
+   "sebhoerl",
+   "vizsim"
+  ]
+ }
+}
